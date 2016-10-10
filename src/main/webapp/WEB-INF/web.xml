@@ -19,4 +19,14 @@
     <servlet-name>ViewPlayIndexPageServlet</servlet-name>
     <url-pattern>/play/index</url-pattern>
   </servlet-mapping>
+  <servlet>
+    <description></description>
+    <display-name>ViewWritePageServlet</display-name>
+    <servlet-name>ViewWritePageServlet</servlet-name>
+    <servlet-class>net.ktds.drink.boards.web.ViewWritePageServlet</servlet-class>
+  </servlet>
+  <servlet-mapping>
+    <servlet-name>ViewWritePageServlet</servlet-name>
+    <url-pattern>/board/write</url-pattern>
+  </servlet-mapping>
 </web-app>
