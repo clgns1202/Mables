@@ -68,4 +68,14 @@
     <servlet-name>ViewListPageServlet</servlet-name>
     <url-pattern>/board/list</url-pattern>
   </servlet-mapping>
+  <servlet>
+    <description></description>
+    <display-name>MyInfoServlet</display-name>
+    <servlet-name>MyInfoServlet</servlet-name>
+    <servlet-class>net.ktds.drink.play.web.ajax.MyInfoServlet</servlet-class>
+  </servlet>
+  <servlet-mapping>
+    <servlet-name>MyInfoServlet</servlet-name>
+    <url-pattern>/myInfo</url-pattern>
+  </servlet-mapping>
 </web-app>
