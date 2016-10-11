@@ -31,22 +31,42 @@
   </servlet-mapping>
   <servlet>
     <description></description>
-    <display-name>ViewSignUpPageServlet</display-name>
-    <servlet-name>ViewSignUpPageServlet</servlet-name>
-    <servlet-class>net.ktds.drink.user.web.ViewSignUpPageServlet</servlet-class>
-  </servlet>
-  <servlet-mapping>
-    <servlet-name>ViewSignUpPageServlet</servlet-name>
-    <url-pattern>/signUp</url-pattern>
-  </servlet-mapping>
-  <servlet>
-    <description></description>
     <display-name>CheckDuplicateUserEmailServlet</display-name>
     <servlet-name>CheckDuplicateUserEmailServlet</servlet-name>
     <servlet-class>net.ktds.drink.user.web.ajax.CheckDuplicateUserEmailServlet</servlet-class>
   </servlet>
   <servlet-mapping>
     <servlet-name>CheckDuplicateUserEmailServlet</servlet-name>
-    <url-pattern>/CheckDuplicateUserEmailServlet</url-pattern>
+    <url-pattern>/duplicateUserEmail</url-pattern>
+  </servlet-mapping>
+  <servlet>
+    <description></description>
+    <display-name>CheckDuplicateUserNickname</display-name>
+    <servlet-name>CheckDuplicateUserNickname</servlet-name>
+    <servlet-class>net.ktds.drink.user.web.ajax.CheckDuplicateUserNickname</servlet-class>
+  </servlet>
+  <servlet-mapping>
+    <servlet-name>CheckDuplicateUserNickname</servlet-name>
+    <url-pattern>/duplicateUserNickname</url-pattern>
+  </servlet-mapping>
+  <servlet>
+    <description></description>
+    <display-name>DoSignUpPageServlet</display-name>
+    <servlet-name>DoSignUpPageServlet</servlet-name>
+    <servlet-class>net.ktds.drink.user.web.ajax.DoSignUpPageServlet</servlet-class>
+  </servlet>
+  <servlet-mapping>
+    <servlet-name>DoSignUpPageServlet</servlet-name>
+    <url-pattern>/doSignUp</url-pattern>
+  </servlet-mapping>
+  <servlet>
+    <description></description>
+    <display-name>ViewSignUpPageServlet</display-name>
+    <servlet-name>ViewSignUpPageServlet</servlet-name>
+    <servlet-class>net.ktds.drink.user.web.ajax.ViewSignUpPageServlet</servlet-class>
+  </servlet>
+  <servlet-mapping>
+    <servlet-name>ViewSignUpPageServlet</servlet-name>
+    <url-pattern>/signUp</url-pattern>
   </servlet-mapping>
 </web-app>

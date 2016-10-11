@@ -12,14 +12,13 @@ import net.ktds.drink.support.Param;
 import net.ktds.drink.user.biz.UserBiz;
 import net.ktds.drink.user.biz.UserBizImpl;
 
-public class CheckDuplicateUserEmailServlet extends HttpServlet {
+public class CheckDuplicateUserNickname extends HttpServlet {
 	private static final long serialVersionUID = 1L;
 	private UserBiz userBiz;
 
-	public CheckDuplicateUserEmailServlet() {
+	public CheckDuplicateUserNickname() {
 		super();
 		userBiz = new UserBizImpl();
-		
 	}
 
 	protected void doGet(HttpServletRequest request, HttpServletResponse response)
@@ -30,15 +29,14 @@ public class CheckDuplicateUserEmailServlet extends HttpServlet {
 	protected void doPost(HttpServletRequest request, HttpServletResponse response)
 			throws ServletException, IOException {
 		
-		String userEmail = Param.getStringParam(request, "userEmail");
+		String userNickname = Param.getStringParam(request, "userNickname");
 		
-		boolean isExsistUserEmail = userBiz.isExsistUserEmail(userEmail);
+		boolean isExsistUserNickname = userBiz.isExsistUserNickname(userNickname);
 		
 		PrintWriter out = response.getWriter();
-		out.write(isExsistUserEmail + "");
+		out.write(isExsistUserNickname + "");
 		out.flush();
 		out.close();
-		
 		
 	}
 
