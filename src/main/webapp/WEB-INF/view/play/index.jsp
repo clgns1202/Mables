@@ -3,12 +3,15 @@
 
     
 <jsp:include page="/WEB-INF/view/common/header.jsp"/>
+<jsp:include page="/WEB-INF/view/play/menu.jsp"/>
+<i class="material-icons">accessible</i>
 fdfd<br/>
 fdfd<br/>
 fdfd<br/>
 fdfd<br/>
 fdfd<br/>
 v
+<i class="material-icons">accessible</i>
 fdfd<br/>
 fdfd<br/>
 fdfd<br/>
@@ -16,6 +19,7 @@ fdfd<br/>
 fdfd<br/>
 fdfd<br/>
 v
+<i class="material-icons">accessible</i>
 fdfd<br/>
 fdfd<br/>
 fdfd<br/>
