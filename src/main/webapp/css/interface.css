@@ -40,3 +40,7 @@ body {margin:0;}
 .active {
     background-color: #4CAF50;
 }
+
+.inline {
+	display: inline-block;
+}

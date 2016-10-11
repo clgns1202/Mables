@@ -29,4 +29,24 @@
     <servlet-name>ViewWritePageServlet</servlet-name>
     <url-pattern>/board/write</url-pattern>
   </servlet-mapping>
+  <servlet>
+    <description></description>
+    <display-name>ViewSetGamesPageServlet</display-name>
+    <servlet-name>ViewSetGamesPageServlet</servlet-name>
+    <servlet-class>net.ktds.drink.games.web.ViewSetGamesPageServlet</servlet-class>
+  </servlet>
+  <servlet-mapping>
+    <servlet-name>ViewSetGamesPageServlet</servlet-name>
+    <url-pattern>/setGames</url-pattern>
+  </servlet-mapping>
+  <servlet>
+    <description></description>
+    <display-name>SearchTypeServlet</display-name>
+    <servlet-name>SearchTypeServlet</servlet-name>
+    <servlet-class>net.ktds.drink.games.web.SearchTypeServlet</servlet-class>
+  </servlet>
+  <servlet-mapping>
+    <servlet-name>SearchTypeServlet</servlet-name>
+    <url-pattern>/searchType</url-pattern>
+  </servlet-mapping>
 </web-app>
