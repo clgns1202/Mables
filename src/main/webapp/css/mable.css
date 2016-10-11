@@ -1,0 +1,9 @@
+@CHARSET "UTF-8";
+
+#marble table {
+	width: 100%;
+}
+
+#marble table tr {
+	height: 120px;
+}

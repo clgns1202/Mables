@@ -1,38 +1,11 @@
-<%@ page language="java" contentType="text/html; charset=EUC-KR"
-    pageEncoding="EUC-KR"%>
+<%@ page language="java" contentType="text/html; charset=UTF-8"
+	pageEncoding="UTF-8"%>
 
-    
-<jsp:include page="/WEB-INF/view/common/header.jsp"/>
-fdfd<br/>
-fdfd<br/>
-fdfd<br/>
-fdfd<br/>
-fdfd<br/>
-v
-fdfd<br/>
-fdfd<br/>
-fdfd<br/>
-fdfd<br/>
-fdfd<br/>
-fdfd<br/>
-v
-fdfd<br/>
-fdfd<br/>
-fdfd<br/>
-fdfd<br/>
-fdfd<br/>
-v
-v
-fdfd<br/>
-fdfd<br/>
-fdfd<br/>
-fdfd<br/>
-v
-fdfd<br/>
-v
-fdfd<br/>
-v
-fdfd<br/>
-vfdfd<br/>
 
-<jsp:include page="/WEB-INF/view/common/footer.jsp"/>
+<jsp:include page="/WEB-INF/view/common/header.jsp" />
+<jsp:include page="/WEB-INF/view/play/menu.jsp" />
+
+
+
+
+<jsp:include page="/WEB-INF/view/common/footer.jsp" />
