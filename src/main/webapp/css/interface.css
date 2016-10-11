@@ -88,6 +88,10 @@ body {
 
 .menubar .menu li.active {
     background-color: #4CAF50;
+}
+
+.inline {
+	display: inline-block;
     color: white;
 }
 
