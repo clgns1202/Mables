@@ -9,6 +9,9 @@ public interface BoardDao {
 	
 	public int insert(BoardVO board);
 	
+	public List<BoardVO> selectBoardLists(SearchBoardVO searchBoard);
+	
+	public int updateBoard(BoardVO board);
 	public List<BoardVO> selectBoards(SearchBoardVO searchBoard);
 	
 	public BoardVO selectBoard(String boardId);

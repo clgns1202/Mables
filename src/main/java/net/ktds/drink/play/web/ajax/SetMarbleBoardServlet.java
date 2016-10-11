@@ -1,4 +1,4 @@
-package net.ktds.drink.boards.web;
+package net.ktds.drink.play.web.ajax;
 
 import java.io.IOException;
 
@@ -8,10 +8,10 @@ import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
-public class ViewWritePageServlet extends HttpServlet {
+public class SetMarbleBoardServlet extends HttpServlet {
 	private static final long serialVersionUID = 1L;
        
-    public ViewWritePageServlet() {
+    public SetMarbleBoardServlet() {
         super();
     }
 
@@ -20,8 +20,14 @@ public class ViewWritePageServlet extends HttpServlet {
 	}
 
 	protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-		String viewPath = "/WEB-INF/view/board/write.jsp";
+		
+		
+		
+		String viewPath = "/WEB-INF/view/play/marble.jsp";
 		RequestDispatcher rd = request.getRequestDispatcher(viewPath);
+		
+		
+		
 		rd.forward(request, response);
 	}
 
