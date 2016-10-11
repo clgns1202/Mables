@@ -33,7 +33,7 @@
 		</select>
 	</div>
 	<div id = "gameName" name="gameName"></div>
-	
+	<div></div>
 
 </body>
 </html>
