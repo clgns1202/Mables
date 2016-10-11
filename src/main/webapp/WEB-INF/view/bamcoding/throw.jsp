@@ -4,6 +4,8 @@
 <html>
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<link rel="stylesheet" type="text/css"  href="/Mables/bamcoding_css/cube.css"/>
+
 <script type="text/javascript" src="/Mables/js/jquery-3.1.1.js"></script>
 
 </head>

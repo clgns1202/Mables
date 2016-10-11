@@ -1,0 +1,87 @@
+@CHARSET "UTF-8";
+
+.moveBtn {
+	top:150px;
+	left: 180px;
+	position: absolute;
+	display: block;
+	background: #ccc;
+	width: 200px;
+	height: 130px;
+	line-height: 130px;
+	font-size: 4em;
+	text-align: center;
+	color: #FFF;
+	border-radius: 10px;
+	box-shadow: 0px 5px 0 #999;
+	transition: box-shadow 0.1s, top 0.1s;
+}
+.object {
+  	position: absolute;
+	top:680px;
+	left:50px;
+  	display: block;
+  	width: 100px;
+  	height: 100px;
+  	line-height: 100px;
+  	font-size: 1.5em;
+  	text-align: center;
+  	background: #ccc;
+  	color: #FFF;
+  	border-radius: 25px;
+  	-webkit-transition: 0.6s;
+	-webkit-transform-style: preserve-3d;
+	-moz-transition: 0.6s;
+	-moz-transform-style: preserve-3d;
+	-o-transition: 0.6s;
+	-o-transform-style: preserve-3d;
+	transition: 0.6s;
+	transform-style: preserve-3d;
+}
+
+.moveBtn:active {
+	box-shadow: 0 1px 0 #999;
+}
+.actionMove{
+    -webkit-animation-name: example; /* Chrome, Safari, Opera */
+    -webkit-animation-duration: 4s; /* Chrome, Safari, Opera */
+    animation-name: example;
+    animation-duration: 4s;
+}
+
+
+/* Chrome, Safari, Opera */
+@-webkit-keyframes example {
+    0%   { left:0px; top:300px;}
+    25%  { left:500px; top:300px;}
+    50%  { left:500px; top:500px;}
+    75%  { left:0px; top:500px;}
+    100% { left:0px; top:300px;}
+}
+
+/* Standard syntax */
+@keyframes example {
+    0%   { left:0px; top:300px;}
+    25%  { left:500px; top:300px;}
+    50%  { left:500px; top:500px;}
+    75%  { left:0px; top:500px;}
+    100% { left:0px; top:300px;}
+}
+</style>
+</head>
+<body>
+<style>
+
+body{
+margin:0px;
+}
+img.gamePan{
+width:100%;
+height:100%
+}
+.grimFrame{
+	position :absolute;
+	width:1250px;
+	height:800px;
+}
+
