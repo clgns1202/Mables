@@ -13,25 +13,6 @@
 <body>
 <!-- <img style="position :absolute;top:0px;left:0px;width:100%; height:100%; " src="/DrinkMable/img/pan.png"/>
  -->
-	<div class="wrapper">
-		<div class="cube">
-			<div class="front side item">front</div>
-			<div class="back side item">back</div>
-			<div class="left side item">left</div>
-			<div class="right side item">right</div>
-			<div class="top side item">top</div>
-			<div class="bottom side item">bottom</div>
-		</div>
-	</div>
-		<div class="wrapper">
-		<div class="cube">
-			<div class="front side item">front</div>
-			<div class="back side item">back</div>
-			<div class="left side item">left</div>
-			<div class="right side item">right</div>
-			<div class="top side item">top</div>
-			<div class="bottom side item">bottom</div>
-		</div>
-	</div>
+
 </body>
 </html>
