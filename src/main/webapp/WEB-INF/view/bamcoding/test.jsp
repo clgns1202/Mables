@@ -94,6 +94,17 @@ $().ready(function() {
 			check =0;
 		}
 	});
+	
+	//던지기 부분
+	$(".throwBtn").click(function(){
+		$(this).mousedown(function(){
+			$(".cube").addClass("actionMove");
+		});	
+		$(this).mouseleave(function(){
+			$(".cube").removeClass("actionMove");
+		});
+	});
+	
 });
 </script>
 <!-- 게임 UI -->
@@ -104,7 +115,6 @@ $().ready(function() {
 	<div class="object">PLAYER</div>
 
 <!-- 큐브 부분 -->
-	<div id="cubeBind">
 	<div class="cubeFrame">
 		<div class="cube">
 			<div class="front side item">1</div>
@@ -114,7 +124,6 @@ $().ready(function() {
 			<div class="top side item">5</div>
 			<div class="bottom side item">6</div>
 		</div>
-	</div>
 	</div>
 <!-- 카드 뒤집기 부분 -->
 <div id="container"">
@@ -129,6 +138,8 @@ $().ready(function() {
   </div>
 </div>
 
+<!-- 큐브 던지는 부분 -->
+<div class="throwBtn">PUSH</div>
 
 
 </body>
