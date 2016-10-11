@@ -3,6 +3,15 @@
 <script type="text/javascript" src="/Mables/js/jquery-3.1.1.js"></script>
 <script type="text/javascript">
 	$(document).ready(function() {
+		$("#menu ul li").click(function(){
+			var index = $(this).index();
+			if(index == 0){
+				$("#settings").load("/Mables/myInfo");
+				
+			}
+		});
+		
+		
 	});
 </script>
 

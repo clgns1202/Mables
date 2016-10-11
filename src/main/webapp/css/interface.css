@@ -7,7 +7,7 @@ body {
 
 #wrapper {
 	position: relative;
-	top: 50px;
+	top: 80px;
 }
 
 .nav ul {
@@ -21,9 +21,15 @@ body {
     width: 100%;
 }
 
+
 .nav li:first-child {
-    float: left;
+	float: left;
 }
+
+.nav li:nth-child(2) {
+	float: left;
+}
+
 
 .nav li label {
     display: block;
@@ -33,7 +39,7 @@ body {
     text-decoration: none;
 }
 
-.nav li {
+.nav li label{
     border-right: none;
     float: right;
 }
@@ -42,7 +48,8 @@ body {
     background-color: #111;
 }
 
-.nav .active {
+
+.nav li.active {
     background-color: #4CAF50;
 }
 
@@ -79,7 +86,7 @@ body {
     text-decoration: none;
 }
 
-.menubar .menu li a.active {
+.menubar .menu li.active {
     background-color: #4CAF50;
     color: white;
 }
@@ -90,5 +97,5 @@ body {
 }
 
 div.sign-in {
-	top: 0;
+	top: 55px;
 }
