@@ -29,4 +29,14 @@
     <servlet-name>ViewWritePageServlet</servlet-name>
     <url-pattern>/board/write</url-pattern>
   </servlet-mapping>
+  <servlet>
+    <description></description>
+    <display-name>DoWriteServlet</display-name>
+    <servlet-name>DoWriteServlet</servlet-name>
+    <servlet-class>net.ktds.drink.boards.web.DoWriteServlet</servlet-class>
+  </servlet>
+  <servlet-mapping>
+    <servlet-name>DoWriteServlet</servlet-name>
+    <url-pattern>/doWrite</url-pattern>
+  </servlet-mapping>
 </web-app>

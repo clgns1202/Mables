@@ -20,7 +20,7 @@ public class ViewWritePageServlet extends HttpServlet {
 	}
 
 	protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-		String viewPath = "/WEB-INF/view/play/index";
+		String viewPath = "/WEB-INF/view/board/write";
 		RequestDispatcher rd = request.getRequestDispatcher(viewPath);
 		rd.forward(request, response);
 	}

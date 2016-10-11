@@ -1,5 +1,8 @@
 package net.ktds.drink.boards.dao;
 
-public interface BoardDao {
+import net.ktds.drink.boards.vo.BoardVO;
 
+public interface BoardDao {
+	
+	public int insert(BoardVO board);
 }
