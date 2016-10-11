@@ -9,7 +9,8 @@ public class BoardVO {
 	private String fileName;
 	private String categoryId;
 	private String modyfyDate;
-	
+	private int hitCount;
+	private int recommendCount;
 	
 	public String getBoardId() {
 		return boardId;
@@ -59,6 +60,17 @@ public class BoardVO {
 	public void setModyfyDate(String modyfyDate) {
 		this.modyfyDate = modyfyDate;
 	}
-	
+	public int getHitCount() {
+		return hitCount;
+	}
+	public void setHitCount(int hitCount) {
+		this.hitCount = hitCount;
+	}
+	public int getRecommendCount() {
+		return recommendCount;
+	}
+	public void setRecommendCount(int recommendCount) {
+		this.recommendCount = recommendCount;
+	}
 	
 }

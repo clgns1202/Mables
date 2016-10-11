@@ -1,5 +1,5 @@
 package net.ktds.drink.boards.biz;
 
-public class BoardBizImpl {
+public class BoardBizImpl implements BoardBiz{
 
 }
