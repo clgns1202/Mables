@@ -25,14 +25,14 @@ public class BoardDaoImpl extends DaoSupport implements BoardDao{
 			@Override
 			public PreparedStatement query(Connection conn) throws SQLException {
 				StringBuffer query = new StringBuffer();
-				query.append(" INSERT	INTO	BOARD( ");
-				query.append("  				, BRD_ID ");
+				query.append(" INSERT	INTO	BOARD ( ");
+				query.append("  				BRD_ID ");
 				query.append("  				, BRD_SBJ, BRD_CONT, USR_ID ");
 				query.append("  				, CRT_DT, FILE_NM, CTGR_ID, MDFY_DT ");
-				query.append("  				, HIT_CNT, RCMD_CNT) ");
-				query.append("  				VAL( ");
-				query.append("  				'BR-' || TO_CHAR(SYSDATE, 'YYYYMMDD') || '-' || LAPD(BRD_ID_SEQ.NEXTVAL,6,0) ");
-				query.append("  				, ?, ?, ?, SYSDATE, ?, ?, SYSDATE, 0, 0) ");
+				query.append("  				, HIT_CNT, RCMD_CNT ) ");
+				query.append("  		VALUES ( ");
+				query.append("  				'BR-' || TO_CHAR(SYSDATE, 'YYYYMMDD') || '-' || LPAD(BRD_ID_SEQ.NEXTVAL,6,0) ");
+				query.append("  				, ?, ?, ?, SYSDATE, ?, ?, SYSDATE, 0, 0 ) ");
 			
 				PreparedStatement pstmt = conn.prepareStatement(query.toString());
 				pstmt.setString(1, board.getBoardSubject());
