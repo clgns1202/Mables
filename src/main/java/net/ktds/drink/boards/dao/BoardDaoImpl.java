@@ -45,9 +45,9 @@ public class BoardDaoImpl extends DaoSupport implements BoardDao{
 	}
 
 	@Override
-	public List<BoardVO> getBoardLists(SearchBoardVO searchBoard) {
+	public List<BoardVO> selectBoardLists(SearchBoardVO searchBoard) {
 		@SuppressWarnings("unchecked")
-		List<BoardVO> lists = (List<BoardVO>)selectList (new QueryAndResult(){
+		List<BoardVO> lists = (List<BoardVO>) selectList(new QueryAndResult(){
 
 			@Override
 			public PreparedStatement query(Connection conn) throws SQLException {
@@ -56,7 +56,8 @@ public class BoardDaoImpl extends DaoSupport implements BoardDao{
 				query.append(" 			, B.BRD_SBJ ");
 				query.append(" 			, B.BRD_CONT ");
 				query.append(" 			, U.USR_ID ");
-				query.append(" 			, B.CRT_DT ");
+				query.append(" 			, U.USR_NICK_NM ");
+				query.append(" 			, TO_CHAR(B.CRT_DT) ");
 				query.append(" 			, B.FILE_NM ");
 				query.append(" 			, B.CTGR_ID ");
 				query.append(" 			, B.MDFY_DT ");
@@ -65,6 +66,20 @@ public class BoardDaoImpl extends DaoSupport implements BoardDao{
 				query.append(" FROM		BOARD B ");
 				query.append(" 			, USR U ");
 				query.append(" WHERE	B.USR_ID = U.USR_ID ");
+				
+				if (searchBoard.getSearchType() == 1) {
+					query.append(" AND ( B.BRD_SBJ LIKE '%' || ? || '%' ");
+					query.append(" OR 	B.BRD_CONT LIKE '%' || ? || '%' ) ");
+				}
+				else if (searchBoard.getSearchType() == 2) {
+					query.append(" AND	B.BRD_SBJ LIKE '%' || ? || '%' ");
+				}
+				else if (searchBoard.getSearchType() == 3) {
+					query.append(" AND	B.BRD_CONT LIKE '%' || ? || '%' ");
+				}
+				else if (searchBoard.getSearchType() == 4) {
+					query.append(" AND	U.USR_NICK_NM LIKE '%' || ? || '%' ");
+				}
 				
 				return null;
 			}

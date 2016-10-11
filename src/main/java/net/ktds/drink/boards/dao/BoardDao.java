@@ -8,6 +8,7 @@ import net.ktds.drink.boards.vo.SearchBoardVO;
 public interface BoardDao {
 	
 	public int insert(BoardVO board);
-	public List<BoardVO> getBoardLists(SearchBoardVO searchBoard);
+	
+	public List<BoardVO> selectBoardLists(SearchBoardVO searchBoard);
 
 }
