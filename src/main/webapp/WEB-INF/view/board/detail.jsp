@@ -5,7 +5,7 @@
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
 <title>Board detail</title>
-<link rel="stylesheet" type="text/css" href="/DrinkMable/css/layout.css" />
+<!--  <link rel="stylesheet" type="text/css" href="/DrinkMable/css/layout.css" /> -->
 </head>
 <body>
 <!-- header -->

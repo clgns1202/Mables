@@ -1,5 +1,7 @@
 package net.ktds.drink.boards.vo;
 
+import net.ktds.drink.user.vo.UserVO;
+
 public class BoardVO {
 	private String boardId;
 	private String boardSubject;
@@ -11,6 +13,8 @@ public class BoardVO {
 	private String modyfyDate;
 	private int hitCount;
 	private int recommendCount;
+	
+	private UserVO userVO;
 	
 	public String getBoardId() {
 		return boardId;
@@ -71,6 +75,12 @@ public class BoardVO {
 	}
 	public void setRecommendCount(int recommendCount) {
 		this.recommendCount = recommendCount;
+	}
+	public UserVO getUserVO() {
+		return userVO;
+	}
+	public void setUserVO(UserVO userVO) {
+		this.userVO = userVO;
 	}
 	
 }
