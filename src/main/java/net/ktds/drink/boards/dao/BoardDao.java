@@ -12,6 +12,7 @@ public interface BoardDao {
 	public List<BoardVO> selectBoardLists(SearchBoardVO searchBoard);
 	
 	public int updateBoard(BoardVO board);
+	
 	public List<BoardVO> selectBoards(SearchBoardVO searchBoard);
 	
 	public BoardVO selectBoard(String boardId);

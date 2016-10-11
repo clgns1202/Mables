@@ -1,5 +1,7 @@
 package net.ktds.drink.user.dao;
 
+import net.ktds.drink.user.vo.UserVO;
+
 /**
  * 다음과 같은 추상 메소드를 가진다
  * 1. 로그인
@@ -10,8 +12,6 @@ package net.ktds.drink.user.dao;
  *
  */
 
-
-import net.ktds.drink.user.vo.UserVO;
 
 public interface UserDao {
 
