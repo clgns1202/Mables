@@ -8,7 +8,7 @@
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
 <title>Board List</title>
-<!--  <link rel="stylesheet" type="text/css" href="/DrinkMable/css/layout.css" /> -->
+<script type="text/javascript" src="/Mables/js/jquery-3.1.1.js"></script>
 </head>
 <body>
 <!-- header -->
@@ -36,23 +36,25 @@
 		</div>
 	</c:forEach>
 	
-	<div id = "paging"> ${paging}
+	<div id = "paging">
+		${paging}
 	</div>
 	
 	<form id = "searchForm" name="searchForm">
 	<div style="padding-top: 10px;">
-		<div class="left"><a href="/Mables/board/write">글쓰기</a>
+		<div class="left">
+			<a href="/Mables/board/write">글쓰기</a>
 		</div>
 		<div class="right">
-			<select>
+			<select id="searchType" name="searchType">
 				<option value="1" ${searchBoard.searchType eq 1 ? 'selected' : '' }>제목+내용</option>
 				<option value="2" ${searchBoard.searchType eq 2 ? 'selected' : '' }>제목</option>
 				<option value="3" ${searchBoard.searchType eq 3 ? 'selected' : '' }>내용</option>
 				<option value="4" ${searchBoard.searchType eq 4 ? 'selected' : '' }>작성자</option>
 			</select>
-			<input />
+			<input type="text" id="searchKeyword" name="searchKeyword" value="${searchBoard.searchKeyword }" />
 			<input type="button" id="searchBtn" value="검색"/>
-			<a>검색 초기화</a>
+			<a href="/Mables/board/list/init">검색 초기화</a>
 		</div>
 		<div class="clear"></div>	
 	</div>

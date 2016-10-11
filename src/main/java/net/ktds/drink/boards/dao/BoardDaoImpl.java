@@ -60,7 +60,6 @@ public class BoardDaoImpl extends DaoSupport implements BoardDao{
 				query.append(" 			, TO_CHAR(B.CRT_DT, 'YYYY-MM-DD HH24:MI:SS') CRT_DT ");
 				query.append(" 			, B.FILE_NM ");
 				query.append(" 			, B.CTGR_ID ");
-				query.append(" 			, B.MDFY_DT ");
 				query.append(" 			, B.HIT_CNT ");
 				query.append(" 			, B.RCMD_CNT ");
 				query.append(" 			, B.USR_ID ");
@@ -89,6 +88,7 @@ public class BoardDaoImpl extends DaoSupport implements BoardDao{
 				String pagingQuery = appendPagingQueryFormat(query.toString());
 				
 				PreparedStatement pstmt = conn.prepareStatement(pagingQuery);
+				
 				int index = 1;
 				
 				if (searchBoard.getSearchType() == 1) {
@@ -113,26 +113,26 @@ public class BoardDaoImpl extends DaoSupport implements BoardDao{
 
 			@Override
 			public Object makeObject(ResultSet rs) throws SQLException {
-				List<BoardVO> boardLists = new ArrayList<BoardVO>();
-				BoardVO boardList = null;
+				List<BoardVO> boards = new ArrayList<BoardVO>();
+				BoardVO board = null;
 				
 				while (rs.next()) {
-					boardList = new BoardVO();
-					boardList.setBoardId(rs.getString("BRD_ID"));
-					boardList.setBoardSubject(rs.getString("BRD_SBJ"));
-					boardList.setBoardContent(rs.getString("BRD_CONT"));
-					boardList.setCreatedDate(rs.getString("CRT_DT"));
-					boardList.setHitCount(rs.getInt("HIT_CNT"));
-					boardList.setRecommendCount(rs.getInt("RCMD_CNT"));
-					boardList.setFileName(rs.getString("FILE_NM"));
-					boardList.setUserId(rs.getString("USR_ID"));
+					board = new BoardVO();
+					board.setBoardId(rs.getString("BRD_ID"));
+					board.setBoardSubject(rs.getString("BRD_SBJ"));
+					board.setBoardContent(rs.getString("BRD_CONT"));
+					board.setCreatedDate(rs.getString("CRT_DT"));
+					board.setHitCount(rs.getInt("HIT_CNT"));
+					board.setRecommendCount(rs.getInt("RCMD_CNT"));
+					board.setFileName(rs.getString("FILE_NM"));
+					board.setUserId(rs.getString("USR_ID"));
 					
-					boardList.setUserVO(new UserVO());
-					boardList.getUserVO().setUserNickname(rs.getString("USR_NICK_NM"));
-					boardList.getUserVO().setUserEmail(rs.getString("USR_EML"));
-					boardLists.add(boardList);
+					board.setUserVO(new UserVO());
+					board.getUserVO().setUserNickname(rs.getString("USR_NICK_NM"));
+					board.getUserVO().setUserEmail(rs.getString("USR_EML"));
+					boards.add(board);
 				}
-				return boardLists;
+				return boards;
 			}
 		});
 		return boards;
@@ -152,7 +152,6 @@ public class BoardDaoImpl extends DaoSupport implements BoardDao{
 				query.append(" 			, TO_CHAR(B.CRT_DT, 'YYYY-MM-DD HH24:MI:SS') CRT_DT ");
 				query.append(" 			, B.FILE_NM ");
 				query.append(" 			, B.CTGR_ID ");
-				query.append(" 			, B.MDFY_DT ");
 				query.append(" 			, B.HIT_CNT ");
 				query.append(" 			, B.RCMD_CNT ");
 				query.append(" 			, B.USR_ID ");
@@ -161,10 +160,11 @@ public class BoardDaoImpl extends DaoSupport implements BoardDao{
 				query.append(" FROM		BOARD B ");
 				query.append(" 			, USR U ");
 				query.append(" WHERE	B.USR_ID = U.USR_ID ");
-				query.append(" AND		B.USR_ID = ? ");
+				query.append(" AND		B.BRD_ID = ? ");
 				
 				PreparedStatement pstmt = conn.prepareStatement(query.toString());
 				pstmt.setString(1, boardId);
+				
 				return pstmt;
 			}
 
@@ -179,8 +179,8 @@ public class BoardDaoImpl extends DaoSupport implements BoardDao{
 					board.setCreatedDate(rs.getString("CRT_DT"));
 					board.setHitCount(rs.getInt("HIT_CNT"));
 					board.setRecommendCount(rs.getInt("RCMD_CNT"));
-					board.setUserId("USR_ID");
-					board.setFileName("FILE_NM");
+					board.setUserId(rs.getString("USR_ID"));
+					board.setFileName(rs.getString("FILE_NM"));
 					
 					board.setUserVO(new UserVO());
 					board.getUserVO().setUserNickname(rs.getString("USR_NICK_NM"));

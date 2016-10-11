@@ -16,7 +16,13 @@
 
 		$("#nav ul li").click(function() {
 			var index = $(this).index();
-
+			if (index == 1) {
+				$("#marble").load("/Mables/setMarbleBoard", function(data){
+					
+				});
+				
+			}
+			
 			if (index == 2) {
 				if (!$(this).hasClass("active")) {
 					$("#menubar").fadeIn();
