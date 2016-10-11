@@ -29,4 +29,24 @@
     <servlet-name>ViewWritePageServlet</servlet-name>
     <url-pattern>/board/write</url-pattern>
   </servlet-mapping>
+  <servlet>
+    <description></description>
+    <display-name>ViewSignUpPageServlet</display-name>
+    <servlet-name>ViewSignUpPageServlet</servlet-name>
+    <servlet-class>net.ktds.drink.user.web.ViewSignUpPageServlet</servlet-class>
+  </servlet>
+  <servlet-mapping>
+    <servlet-name>ViewSignUpPageServlet</servlet-name>
+    <url-pattern>/signUp</url-pattern>
+  </servlet-mapping>
+  <servlet>
+    <description></description>
+    <display-name>CheckDuplicateUserEmailServlet</display-name>
+    <servlet-name>CheckDuplicateUserEmailServlet</servlet-name>
+    <servlet-class>net.ktds.drink.user.web.ajax.CheckDuplicateUserEmailServlet</servlet-class>
+  </servlet>
+  <servlet-mapping>
+    <servlet-name>CheckDuplicateUserEmailServlet</servlet-name>
+    <url-pattern>/CheckDuplicateUserEmailServlet</url-pattern>
+  </servlet-mapping>
 </web-app>
