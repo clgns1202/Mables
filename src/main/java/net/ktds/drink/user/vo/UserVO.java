@@ -3,7 +3,7 @@ package net.ktds.drink.user.vo;
 public class UserVO {
 	
 	String userId;
-	String password;
+	String userPassword;
 	int points;
 	String userEmail;
 	String userNickname;
@@ -14,11 +14,11 @@ public class UserVO {
 	public void setUserId(String userId) {
 		this.userId = userId;
 	}
-	public String getPassword() {
-		return password;
+	public String getUserPassword() {
+		return userPassword;
 	}
-	public void setPassword(String password) {
-		this.password = password;
+	public void setUserPassword(String userPassword) {
+		this.userPassword = userPassword;
 	}
 	public int getPoints() {
 		return points;
