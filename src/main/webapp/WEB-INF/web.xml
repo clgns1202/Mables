@@ -59,8 +59,6 @@
     <url-pattern>/CheckDuplicateUserEmailServlet</url-pattern>
   </servlet-mapping>
   <servlet>
-<<<<<<< HEAD
-=======
     <description></description>
     <display-name>ViewListPageServlet</display-name>
     <servlet-name>ViewListPageServlet</servlet-name>
@@ -71,7 +69,6 @@
     <url-pattern>/board/list</url-pattern>
   </servlet-mapping>
   <servlet>
->>>>>>> e938fad126c15189c9cc7fbc9edf65b88a7188e6
     <description></description>
     <display-name>MyInfoServlet</display-name>
     <servlet-name>MyInfoServlet</servlet-name>
@@ -81,7 +78,6 @@
     <servlet-name>MyInfoServlet</servlet-name>
     <url-pattern>/myInfo</url-pattern>
   </servlet-mapping>
-<<<<<<< HEAD
   <servlet>
     <description></description>
     <display-name>ViewTestServlet</display-name>
@@ -92,6 +88,4 @@
     <servlet-name>ViewTestServlet</servlet-name>
     <url-pattern>/test</url-pattern>
   </servlet-mapping>
-=======
->>>>>>> e938fad126c15189c9cc7fbc9edf65b88a7188e6
 </web-app>
