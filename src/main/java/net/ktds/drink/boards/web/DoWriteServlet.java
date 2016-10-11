@@ -15,6 +15,7 @@ import net.ktds.drink.boards.vo.BoardVO;
 import net.ktds.drink.constants.Session;
 import net.ktds.drink.support.MultipartHttpServletRequest;
 import net.ktds.drink.support.MultipartHttpServletRequest.MultipartFile;
+import net.ktds.drink.support.Param;
 import net.ktds.drink.user.biz.UserBiz;
 import net.ktds.drink.user.biz.UserBizImpl;
 import net.ktds.drink.user.vo.UserVO;
@@ -41,6 +42,7 @@ public class DoWriteServlet extends HttpServlet {
 		
 		String boardSubject = multipartRequest.getParameter("boardSubject");
 		String boardContent = multipartRequest.getParameter("boardContent");
+		String categoryId = multipartRequest.getParameter("categoryId");
 		
 		String fileName = "";
 		MultipartFile uploadFile = multipartRequest.getFile("file");
@@ -62,16 +64,17 @@ public class DoWriteServlet extends HttpServlet {
 		BoardVO board = new BoardVO();
 		board.setBoardSubject(boardSubject);
 		board.setBoardContent(boardContent);
+		board.setCategoryId(categoryId);
 		board.setUserId(userVO.getUserId());
 		board.setFileName(fileName);
 		
 		boolean isSuccess = boardBiz.addBoard(board);
 		if ( isSuccess ) {
 			String userId = userVO.getUserId();
-			response.sendRedirect("/Board/board/list");
+			response.sendRedirect("/Mables/board/list");
 		}
 		else {
-			response.sendRedirect("/Board/baord/write?errorCode=1");
+			response.sendRedirect("/Mables/baord/write?errorCode=1");
 		}
 		
 	}

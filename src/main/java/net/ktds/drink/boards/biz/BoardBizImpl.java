@@ -17,4 +17,10 @@ public class BoardBizImpl implements BoardBiz{
 		return boardDao.insert(board) > 0;
 	}
 
+	@Override
+	public boolean updateBoard(BoardVO board) {
+		
+		return false;
+	}
+
 }

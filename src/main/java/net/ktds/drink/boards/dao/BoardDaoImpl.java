@@ -94,6 +94,48 @@ public class BoardDaoImpl extends DaoSupport implements BoardDao{
 		return null;
 	}
 
+	@Override
+	public int updateBoard(BoardVO board) {
+		return insert(new Query() {
+			
+			@Override
+			public PreparedStatement query(Connection conn) throws SQLException {
+				StringBuffer query = new StringBuffer();
+				query.append( " UPDATE	BOARD " );
+				query.append( " SET		MDFY_DT = SYSDATE " );
+				if ( board.getBoardSubject() != null ) {
+					query.append( " , BRD_SBJ = ? " );
+				}
+				if ( board.getBoardContent() != null ) {
+					query.append( " , BRD_CONT = ? " );
+				}
+				if ( board.getBoardSubject() != null ) {
+					query.append( " , FILE_NM = ? " );
+				}
+				query.append(" WHERE	BRD_ID ");
+				
+				PreparedStatement pstmt = conn.prepareStatement(query.toString());
+				
+				int index = 1;
+				if ( board.getBoardSubject() != null ) {
+					query.append( " , BRD_SBJ = ? " );
+					pstmt.setString(index++, board.getBoardSubject());
+				}
+				if ( board.getBoardContent() != null ) {
+					query.append( " , BRD_CONT = ? " );
+					pstmt.setString(index++, board.getBoardContent());
+				}
+				if ( board.getBoardSubject() != null ) {
+					query.append( " , FILE_NM = ? " );
+					pstmt.setString(index++, board.getFileName());
+				}
+				
+				pstmt.setString(index++, board.getBoardId());
+				return pstmt;
+			}
+		});
+	}
+
 
 }
 
