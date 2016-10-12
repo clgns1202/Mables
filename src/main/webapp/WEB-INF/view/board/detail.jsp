@@ -1,5 +1,7 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
     pageEncoding="UTF-8"%>
+<%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core"%>
+
 <!DOCTYPE html>
 <html>
 <head>
@@ -14,21 +16,21 @@
 
 <div>
 	<div>
-		<div>${board.boardSubject }</div>
+		<p>${board.boardSubject }</p>
 		<div>
-			<div>${board.userVO.userNickname }</div>
+			<div><span>${board.userVO.userNickname }</span></div>
 			<div>${board.createdDate }</div>
 			<div>${board.hitCount }</div>
 			<div>${board.recommendCount }</div>
 		</div>
 		<hr/>
-		<div>${board.content }</div>
+		<div>${board.boardContent }</div>
 	</div>
 	<div>
 		추천
 		<a href="">삭제</a>
 		<a href="/Mables/board/modify?boardId=${board.boardId }">수정</a>
-		<a>목록보기</a>
+		<a href="/Mables/board/list">목록보기</a>
 	</div>
 </div> 
 

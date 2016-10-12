@@ -6,7 +6,6 @@ import java.sql.ResultSet;
 import java.sql.SQLException;
 import java.util.ArrayList;
 import java.util.List;
-import java.sql.SQLException;
 
 
 import net.ktds.drink.boards.vo.BoardVO;
@@ -146,6 +145,7 @@ public class BoardDaoImpl extends DaoSupport implements BoardDao{
 
 			@Override
 			public PreparedStatement query(Connection conn) throws SQLException {
+				
 				StringBuffer query = new StringBuffer();
 				query.append(" SELECT	B.BRD_ID ");
 				query.append(" 			, B.BRD_SBJ ");
@@ -172,6 +172,7 @@ public class BoardDaoImpl extends DaoSupport implements BoardDao{
 			@Override
 			public Object makeObject(ResultSet rs) throws SQLException {
 				BoardVO board = null;
+				
 				if (rs.next()) {
 					board = new BoardVO();
 					board.setBoardId(rs.getString("BRD_ID"));

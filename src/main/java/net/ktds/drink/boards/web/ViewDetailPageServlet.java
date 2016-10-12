@@ -7,16 +7,17 @@ import javax.servlet.ServletException;
 import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
+import javax.servlet.http.HttpSession;
 
 import net.ktds.drink.boards.biz.BoardBiz;
 import net.ktds.drink.boards.biz.BoardBizImpl;
 import net.ktds.drink.boards.vo.BoardVO;
+import net.ktds.drink.constants.Session;
 import net.ktds.drink.support.Param;
-import net.ktds.drink.user.biz.UserBiz;
-import net.ktds.drink.user.biz.UserBizImpl;
+import net.ktds.drink.user.vo.UserVO;
 
 /**
- * 로그인 세션, 포인트 업데이트(글 읽었을때 포인트?), 히트 카운트 업데이트(+1)
+ * 세션필터, 포인트 업데이트(글 읽었을때 포인트?), 히트 카운트 업데이트(+1)
  * @author Eun-joo
  *
  */
@@ -43,6 +44,10 @@ public class ViewDetailPageServlet extends HttpServlet {
 		String boardId = Param.getStringParam(request, "boardId");
 		
 		BoardVO board = boardBiz.getBoardAt(boardId);
+		
+		//HttpSession session = request.getSession();
+		//UserVO userVO = (UserVO)session.getAttribute(Session.USER_INFO);
+		//String userId = userVO.getUserId();
 		
 		String viewPath = "/WEB-INF/view/board/detail.jsp";
 		RequestDispatcher rd = request.getRequestDispatcher(viewPath);
