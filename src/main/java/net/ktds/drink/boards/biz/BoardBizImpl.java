@@ -71,5 +71,16 @@ public class BoardBizImpl implements BoardBiz{
 	public BoardVO getBoardAt(String boardId) {
 		return boardDao.selectBoard(boardId);
 	}
+
+	@Override
+	public String getFileNameOfBoardBy(String boardId) {
+		BoardVO board = boardDao.selectBoard(boardId);
+		return board.getFileName();
+	}
+
+	@Override
+	public BoardVO getBoardForModify(String boardId) {
+		return boardDao.selectBoard(boardId);
+	}
 	
 }

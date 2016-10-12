@@ -1,8 +1,14 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
 	pageEncoding="UTF-8"%>
-
-<jsp:include page="/WEB-INF/view/common/header.jsp" />
-
+<%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core"%>
+<!DOCTYPE html>
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<title>Insert title here</title>
+<link rel="stylesheet" type="text/css" href="/Mables/css/layout.css" />
+<link rel="stylesheet" type="text/css" href="/Mables/css/grid.css" />
+<script type="text/javascript" src="/Mables/js/jquery-3.1.1.js"></script>
 <script type="text/javascript">
 	$(document).ready(function() {
 
@@ -13,7 +19,7 @@
 			alert("글 저장에 실패 하였습니다.");
 		}
 		$("#goBackBtn").click(function() {
-			location.href = "Mables/board/list";
+			location.href = "/Mables/board/list";
 		});
 		$("#boardSubject").keyup(function() {
 			if ($(this).val() == "") {
@@ -44,14 +50,14 @@
 			}).submit();
 		});
 		
-
+		$("#categoryId").val("categoryId;");
 			
 
 		function isVisibleWriteBtn() {
 			if ($(".pass").length == 2) {
 				$("#writeBtn").show(500);
 			} else {
-				$("writeBtn").hide();
+				$("#writeBtn").hide();
 			}
 		}
 ;
@@ -79,6 +85,10 @@
 			<div class="inline">
 				<input type="button" id="writeBtn" value="글쓰기" />
 			</div>
+			</div>
+			<input type="hidden" name="CategoryId" value="${board.categoryId}" />
+			<div class="clear"></div>
+			
 
 		</div>
 	</form>

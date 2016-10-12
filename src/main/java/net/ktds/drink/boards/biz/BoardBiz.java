@@ -14,4 +14,8 @@ public interface BoardBiz {
 
 	public BoardVO getBoardAt(String boardId);
 	
+	public String getFileNameOfBoardBy(String boardId);
+	
+	public BoardVO getBoardForModify(String boardId);
+	
 }

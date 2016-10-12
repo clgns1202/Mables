@@ -2,34 +2,27 @@ package net.ktds.drink.boards.web;
 
 import java.io.File;
 import java.io.IOException;
-
 import javax.servlet.ServletException;
 import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
-import javax.servlet.http.HttpSession;
+
+import org.apache.commons.fileupload.UploadContext;
 
 import net.ktds.drink.boards.biz.BoardBiz;
 import net.ktds.drink.boards.biz.BoardBizImpl;
 import net.ktds.drink.boards.vo.BoardVO;
-import net.ktds.drink.constants.Session;
 import net.ktds.drink.support.MultipartHttpServletRequest;
 import net.ktds.drink.support.MultipartHttpServletRequest.MultipartFile;
-import net.ktds.drink.support.Param;
-import net.ktds.drink.user.biz.UserBiz;
-import net.ktds.drink.user.biz.UserBizImpl;
-import net.ktds.drink.user.vo.UserVO;
 
-public class DoWriteServlet extends HttpServlet {
+public class DoModifyServlet extends HttpServlet {
 	private static final long serialVersionUID = 1L;
 	
 	private BoardBiz boardBiz;
-	private UserBiz userBiz;
        
-    public DoWriteServlet() {
+    public DoModifyServlet() {
         super();
         boardBiz = new BoardBizImpl();
-        userBiz = new UserBizImpl();
     }
 
 	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
@@ -40,43 +33,43 @@ public class DoWriteServlet extends HttpServlet {
 		
 		MultipartHttpServletRequest multipartRequest = new MultipartHttpServletRequest(request);
 		
-		String boardId = "wdoinqwdon";
+		String boardId = multipartRequest.getParameter("boardId");
 		String boardSubject = multipartRequest.getParameter("boardSubject");
 		String boardContent = multipartRequest.getParameter("boardContent");
-		String boardUserId = "wqeqwd";
-		String categoryId = "qwrqwqdq";
-		
-		String fileName = "";
-		MultipartFile uploadFile = multipartRequest.getFile("file");
-		if ( uploadFile.getFileSize() > 0 ) {
-			File uploadFileDirectory = new File( "D:\\board\\uploadfiles" );
-			if ( !uploadFileDirectory.exists() ){
-				uploadFileDirectory.mkdirs();
-			}
-			uploadFile.write("D:\\board\\uplaodfiles\\" + uploadFile.getFileName());
-			fileName = uploadFile.getFileName();
-		}
+		String fileDeleteBtn = multipartRequest.getParameter("fileDeleteBtn");
 		
 		boardContent = boardContent.replaceAll("\n", "<br/>")
 									.replaceAll("\r", "");
-		
-		HttpSession session = request.getSession();
-		UserVO userVO = (UserVO) session.getAttribute(Session.USER_INFO);
 		
 		BoardVO board = new BoardVO();
 		board.setBoardId(boardId);
 		board.setBoardSubject(boardSubject);
 		board.setBoardContent(boardContent);
-		board.setUserId(boardUserId);
-		board.setFileName(fileName);
-		board.setCategoryId(categoryId);
 		
-		boolean isSuccess = boardBiz.addBoard(board);
-
-		if (isSuccess) {
-			response.sendRedirect("/Mables/board/list");
-		} else {
-			response.sendRedirect("/Mables/board/write?errorCode=1");
+		if ( fileDeleteBtn == null && fileDeleteBtn.equals("delete")) {
+			String fileName = boardBiz.getFileNameOfBoardBy(boardId);
+			File file = new File("D:\\board\\uploadfiles\\" + fileName );
+			file.delete();
 		}
+		
+		MultipartFile uploadedFile = multipartRequest.getFile("file");
+		if( uploadedFile.getFileSize() > 0 ) {
+			
+			File uploadedFileDiectory = new File("D:\\board\\uploadfiles");
+			if( !uploadedFileDiectory.exists() ){
+				uploadedFileDiectory.mkdirs();
+			}
+			
+			uploadedFile.write("D:\\board\\uploadfiles\\" + uploadedFile.getFileName());
+			String fileName = uploadedFile.getFileName();
+			board.setFileName(fileName);
+		}
+		boolean isSuccess = boardBiz.updateBoard(board);
+		if ( isSuccess ) {
+			response.sendRedirect("/Board/board/detail?boardId=" + boardId);
+		}
+		
 	}
+	
+
 }

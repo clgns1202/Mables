@@ -18,7 +18,7 @@
 	<hr/>
 	<div>내용
 	</div>
-</div>
+</div> 
 
 <!-- footer -->
 </body>
