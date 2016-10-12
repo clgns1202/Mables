@@ -81,7 +81,6 @@ public class BoardDaoImpl extends DaoSupport implements BoardDao{
 				else if (searchBoard.getSearchType() == 4) {
 					query.append(" AND	U.USR_NICK_NM LIKE '%' || ? || '%' ");
 				}
-				
 				query.append(" ORDER	BY B.BRD_ID DESC ");
 				
 				String pagingQuery = appendPagingQueryFormat(query.toString());
@@ -121,9 +120,10 @@ public class BoardDaoImpl extends DaoSupport implements BoardDao{
 					board.setBoardSubject(rs.getString("BRD_SBJ"));
 					board.setBoardContent(rs.getString("BRD_CONT"));
 					board.setCreatedDate(rs.getString("CRT_DT"));
+					board.setFileName(rs.getString("FILE_NM"));
+					board.setCategoryId(rs.getString("CTGR_ID"));
 					board.setHitCount(rs.getInt("HIT_CNT"));
 					board.setRecommendCount(rs.getInt("RCMD_CNT"));
-					board.setFileName(rs.getString("FILE_NM"));
 					board.setUserId(rs.getString("USR_ID"));
 					
 					board.setUserVO(new UserVO());
@@ -304,6 +304,46 @@ public class BoardDaoImpl extends DaoSupport implements BoardDao{
 				pstmt.setString(1, boardId);
 				return pstmt;
 			}
+		});
+	}
+
+	@Override
+	public int updateHitCount(String boardId) {
+		
+		return insert(new Query() {
+
+			@Override
+			public PreparedStatement query(Connection conn) throws SQLException {
+				StringBuffer query = new StringBuffer();
+				query.append(" UPDATE	BOARD ");
+				query.append(" SET		HIT_CNT = HIT_CNT+1 ");
+				query.append(" WHERE	BRD_ID = ? ");
+				
+				PreparedStatement pstmt = conn.prepareStatement(query.toString());
+				pstmt.setString(1, boardId);
+				
+				return pstmt;
+			}
+		});
+	}
+
+	@Override
+	public int updateRecommendCount(String boardId) {
+
+		return insert(new Query(){
+
+			@Override
+			public PreparedStatement query(Connection conn) throws SQLException {
+				StringBuffer query = new StringBuffer();
+				query.append(" UPDATE	BOARD ");
+				query.append(" SET		RCMD_CNT ");
+				query.append(" WHERE	BRD_ID = ? ");
+				
+				PreparedStatement pstmt = conn.prepareStatement(query.toString());
+				pstmt.setString(1, boardId);
+				
+				return pstmt;
+			}		
 		});
 	}
 	

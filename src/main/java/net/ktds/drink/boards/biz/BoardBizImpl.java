@@ -87,5 +87,16 @@ public class BoardBizImpl implements BoardBiz{
 	public boolean removeBoard(String boardId) {
 		return boardDao.deleteBoard(boardId) > 0;
 	}
+
+	@Override
+	public boolean updateHitCount(String boardId) {
+		return boardDao.updateHitCount(boardId) > 0;
+	}
+
+	@Override
+	public boolean updateRecommendCount(String boardId) {
+		return boardDao.updateRecommendCount(boardId) > 0;
+	}
+	
 	
 }

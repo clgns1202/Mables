@@ -20,4 +20,8 @@ public interface BoardBiz {
 	
 	public boolean removeBoard(String boardId);
 	
+	public boolean updateHitCount(String boardId);
+	
+	public boolean updateRecommendCount(String boardId);
+	
 }
