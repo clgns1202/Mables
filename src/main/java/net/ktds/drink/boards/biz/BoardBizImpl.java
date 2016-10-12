@@ -82,5 +82,10 @@ public class BoardBizImpl implements BoardBiz{
 	public BoardVO getBoardForModify(String boardId) {
 		return boardDao.selectBoard(boardId);
 	}
+
+	@Override
+	public boolean removeBoard(String boardId) {
+		return boardDao.deleteBoard(boardId) > 0;
+	}
 	
 }

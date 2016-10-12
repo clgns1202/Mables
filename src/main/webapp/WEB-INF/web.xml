@@ -156,4 +156,34 @@
     <servlet-name>DoSignUpPageServlet</servlet-name>
     <url-pattern>/doSignUp</url-pattern>
   </servlet-mapping>
+  <servlet>
+    <description></description>
+    <display-name>DoDeleteServlet</display-name>
+    <servlet-name>DoDeleteServlet</servlet-name>
+    <servlet-class>net.ktds.drink.boards.web.DoDeleteServlet</servlet-class>
+  </servlet>
+  <servlet-mapping>
+    <servlet-name>DoDeleteServlet</servlet-name>
+    <url-pattern>/doDelete</url-pattern>
+  </servlet-mapping>
+  <servlet>
+    <description></description>
+    <display-name>ViewModifyServlet</display-name>
+    <servlet-name>ViewModifyServlet</servlet-name>
+    <servlet-class>net.ktds.drink.boards.web.ViewModifyServlet</servlet-class>
+  </servlet>
+  <servlet-mapping>
+    <servlet-name>ViewModifyServlet</servlet-name>
+    <url-pattern>/board/modify</url-pattern>
+  </servlet-mapping>
+  <servlet>
+    <description></description>
+    <display-name>DoModifyServlet</display-name>
+    <servlet-name>DoModifyServlet</servlet-name>
+    <servlet-class>net.ktds.drink.boards.web.DoDeleteServlet</servlet-class>
+  </servlet>
+  <servlet-mapping>
+    <servlet-name>DoModifyServlet</servlet-name>
+    <url-pattern>/doModify</url-pattern>
+  </servlet-mapping>
 </web-app>

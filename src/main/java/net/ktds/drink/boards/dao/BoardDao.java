@@ -16,4 +16,6 @@ public interface BoardDao {
 	public int getCountOfBoards(SearchBoardVO searchBoard);
 
 	public int updateBoard(BoardVO board);
+	
+	public int deleteBoard(String boardId);
 }

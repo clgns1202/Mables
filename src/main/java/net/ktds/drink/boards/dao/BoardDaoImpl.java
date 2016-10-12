@@ -288,6 +288,23 @@ public class BoardDaoImpl extends DaoSupport implements BoardDao{
 			
 		});
 	}
+
+	@Override
+	public int deleteBoard(String boardId) {
+		return insert(new Query() {
+			
+			@Override
+			public PreparedStatement query(Connection conn) throws SQLException {
+				StringBuffer query = new StringBuffer();
+				query.append(" DELETE	FROM	BOARD ");
+				query.append(" WHERE			BRD_ID = ? ");
+				
+				PreparedStatement pstmt = conn.prepareStatement(query.toString());
+				pstmt.setString(1, boardId);
+				return pstmt;
+			}
+		});
+	}
 	
 }
 
