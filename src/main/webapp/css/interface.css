@@ -111,8 +111,10 @@ body {
     color: white;
 }
 
-.sign-in {
+.sign-in{
+	background-color: #555;
 	top: 60px;
+	right:0;
 	position: fixed;
 	z-index: 89;
 }
