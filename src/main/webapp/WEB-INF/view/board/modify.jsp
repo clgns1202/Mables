@@ -71,11 +71,13 @@
 		${board.boardContent}
 		</textarea>
 	</div>
+	<c:if test="${not empty article.fileName }">
 	<div style="padding-top: 10px; padding-bottom: 10px" >
 		<input type="checkbox" id="fileDeleteBtn" name="fileDeleteBtn" value="delete" />
 		<img src="/Mables/img/text-file-3-xxl.png" style="width:12px;'" />
 		${board.fileName}
 	</div>
+	</c:if>
 	<div>
 		<div class="left">
 			<input type="file" id="file" name="file" />
