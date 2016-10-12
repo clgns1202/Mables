@@ -1,12 +1,12 @@
 @CHARSET "UTF-8";
 
-body, div, p, span, input, select, textarea, td, th, li, b, file {
+#wrapper body, div, p, span, input, select, textarea, td, th, li, b, file {
 	font-size: 12px;
 	color: #333;
 	font-family: "나눔고딕", "고딕체", "고딕"
 }
 
-body {
+#wrapper body {
 	background-color: #ffffff;
 }
 
@@ -15,147 +15,143 @@ body {
 	margin: 0 auto;
 }
 
-a:ACTIVE, a:VISITED, a:LINK {
+#wrapper a:ACTIVE, a:VISITED, a:LINK {
 	font-size: 12px;
 	color: #666;
 	text-decoration: none;
 }
 
-a:HOVER {
+#wrapper a:HOVER {
 	font-size: 12px;
 	color: #888;
 	text-decoration: underline;
 }
 
-.round {
+#wrapper .round {
 	border-radius: 7px;
 }
 
-input {
+#wrapper input {
 	padding: 5px;
 	padding-left: 15px;
 	border-radius: 7px;
 	border: 1px solid #BBBBBB;
 }
 
-input[type=file] {
+#wrapper input[type=file] {
 	border: none;
 }
 
-input[type=button], select, textarea {
+#wrapper input[type=button], select, textarea {
 	padding: 5px;
 	border: 1px solid #BBBBBB;
 	border-radius: 7px;
 }
 
-textarea {
+#wrapper textarea {
 	padding-left: 15px;
 	padding-top: 15px;
 	padding-bottom: 15px;
 	border: 1px solid #BBBBBB;
 }
 
-input[type=button]:HOVER {
+#wrapper input[type=button]:HOVER {
 	border: 1px solid RED;
 }
 
-input:FOCUS, textarea:FOCUS {
+#wrapper input:FOCUS, textarea:FOCUS {
 	border: 1px solid #ff0000;
 }
 
-#registForm, #loginForm {
+#wrapper #registForm, #loginForm {
 	margin: 0 auto;
 	text-align: center;
 	width: 275px;
 }
 
-#registForm input[type=text], input[type=password] {
+#wrapper #registForm input[type=text], input[type=password] {
 	width: 250px;
 	margin-top: 5px;
 }
 
-#loginForm input[type=text], input[type=password] {
+#wrapper #loginForm input[type=text], input[type=password] {
 	width: 250px;
 	margin-top: 5px;
 }
 
-#registForm, #loginForm input:FIRST-CHILD {
+#wrapper #registForm, #loginForm input:FIRST-CHILD {
 	margin-top: 0px;
 }
 
-.inline2 {
-	display: inline-block;
-}
-
-#writeForm input[type="text"], textarea{
+#wrapper #writeForm input[type="text"], textarea{
 	width: 100%;
 	margin-top: 5px;
 }
 
-#writeForm textarea {
+#wrapper #writeForm textarea {
 	height: 300px;
 }
 
-.left {
+#wrapper .left {
 	float: left;
 }
 
-.right {
+#wrapper .right {
 	float: right;
 }
 
-.clear {
+#wrapper .clear {
 	clear: both;
 }
 
-#article {
+#wrapper #article {
 	background-color: #FFFFFF;
 	padding: 15px;
 	border-radius: 7px;
 }
 
 
-#article #articleHeader p {
+#wrapper #article #articleHeader p {
 	margin: 0px;
 	font-size: 22px;
 	font-weight: bold;
 }
 
-#article #articleHeader #articleInfo span {
+#wrapper #article #articleHeader #articleInfo span {
 	font-size: 13px;
 	margin-right: 15px;
 }
 
-#article #articleHeader #articleInfo span img {
+#wrapper #article #articleHeader #articleInfo span img {
 	width: 15px;
 	margin-right: 5px;
 }
 
-#article #articleHeader #attachedFile span {
+#wrapper #article #articleHeader #attachedFile span {
 	font-size: 13px;
 	margin-right: 15px;
 }
 
-#article #articleHeader #attachedFile span img {
+#wrapper #article #articleHeader #attachedFile span img {
 	width: 15px;
 	margin-top: 10px;
 	margin-right: 5px;
 }
 
-#article #articleBody {
+#wrapper #article #articleBody {
 	margin-top: 10px;
 }
 
-#articleFooter {
+#wrapper #articleFooter {
 	margin-left: 10px;
 	margin-top: 10px;
 }
 
-.warning {
+#wrapper .warning {
 	background-color: #FFB7DB;
 }
 
-.pass {
+#wrapper .pass {
 	background-color: #A0FEAC;
 }
 
