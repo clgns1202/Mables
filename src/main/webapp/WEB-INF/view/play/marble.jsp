@@ -90,29 +90,40 @@
 						
 						var showTime = 1000;
 						var number = parseInt(data);
-						$("#bling").addClass("bling");
-						$("#cube").addClass("actionMove");
+						//
+						$("#blingEffect").addClass("blingEffect");
+						$("#cube").addClass("throwAction");
 
 						setTimeout(function() {
-							$("#cube").removeClass("actionMove");
+							$("#cube").removeClass("throwAction");
 						}, showTime);
 
 						console.log("전꺼:" + preNum + " 지금:" + number);
 						$("#cube").removeClass("cube");
 						if (preNum != 0) {
 							$("#cube").addClass("show" + number);
+							$("#cube").queue(function(){
+								$("#cube").css("animation", "zoom 0.5s linear");
+								$( this ).dequeue();
+							});
 							$("#cube").removeClass("show" + preNum + "");
 						} else {
-							$("#cube").addClass("show" + number);
+							$("#cube").addClass("show" + number);						
+							$("#cube").queue(function(){
+								$("#cube").css("animation", "zoom 0.5s linear");
+								$( this ).dequeue();
+							});
 						}
+						 
 						preNum = number;
+						
 
 						for (var i = 0; i < number; i++) {
 							showTime += 400;
 							setTimeout(moveUnit, showTime);
 						}
 						setTimeout(function() {
-							$("#bling").removeClass("bling");
+							$("#blingEffect").removeClass("blingEffect");
 							getPenalty();
 						}, showTime + 700);
 	
@@ -138,21 +149,18 @@
 					
 					
 					//황금 열쇠가 선택 되었을 때의 이벤트 처리
+					var result = 0;
+					var currdeg = 0;
 					var div = $("#cell"+positionIndex+" .gameType").text();
 					alert(div);
 					if(div == "GOLD_KEY"){
-						
+					result = parseInt(Math.random()*6)+1;
+					currdeg = currdeg + result*600;
+					$("#keyCard").css( "animation","spinGoldKey 4s linear");						
 					}
 				}
 
-				var result = 0;
-				var currdeg = 0;
-				result = parseInt(Math.random()*6)+1;
 				
-				$(".roll").click(function(){
-					currdeg = currdeg + result*600;
-					$("#keyCard").css( "animation","spinGoldKey 4s infinite linear");
-				});
 				
 			});
 </script>
@@ -303,14 +311,15 @@
 		<!-- 큐브 부분 -->
 		<div class="cubeFrame">
 			<div class="cube" id="cube">
-				<div class="front side">1</div>
-				<div class="back side">6</div>
-				<div class="left side">3</div>
-				<div class="right side">4</div>
-				<div class="top side">5</div>
-				<div class="bottom side">2</div>
+				<div class="front side"></div>
+				<div class="back side"></div>
+				<div class="left side"></div>
+				<div class="right side"></div>
+				<div class="top side"></div>
+				<div class="bottom side"></div>
 			</div>
 		</div>
+		<div id="blingEffect"></div>
 		<!-- 카드 뒤집기 부분 -->
 		<div id="container">
 			<div id="flipper">
@@ -336,9 +345,7 @@
 		  </div>
 		</div>
 		
-		<div class="roll">ROLL</div>
 
-		<div id="bling"></div>
 		<div id="viewInfo"></div>
 		<div id="goldenCard"></div>
 		<div id="drink"></div>
