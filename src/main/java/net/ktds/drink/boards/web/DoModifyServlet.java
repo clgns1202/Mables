@@ -41,12 +41,13 @@ public class DoModifyServlet extends HttpServlet {
 		boardContent = boardContent.replaceAll("\n", "<br/>")
 									.replaceAll("\r", "");
 		
+
 		BoardVO board = new BoardVO();
 		board.setBoardId(boardId);
 		board.setBoardSubject(boardSubject);
 		board.setBoardContent(boardContent);
 		
-		if ( fileDeleteBtn == null && fileDeleteBtn.equals("delete")) {
+		if ( fileDeleteBtn != null && fileDeleteBtn.equals("delete")) {
 			String fileName = boardBiz.getFileNameOfBoardBy(boardId);
 			File file = new File("D:\\board\\uploadfiles\\" + fileName );
 			file.delete();
@@ -57,9 +58,9 @@ public class DoModifyServlet extends HttpServlet {
 		MultipartFile uploadedFile = multipartRequest.getFile("file");
 		if( uploadedFile.getFileSize() > 0 ) {
 			
-			File uploadedFileDiectory = new File("D:\\board\\uploadfiles");
-			if( !uploadedFileDiectory.exists() ){
-				uploadedFileDiectory.mkdirs();
+			File uploadedFileDirectory = new File("D:\\board\\uploadfiles");
+			if( !uploadedFileDirectory.exists() ){
+				uploadedFileDirectory.mkdirs();
 			}
 			
 			uploadedFile.write("D:\\board\\uploadfiles\\" + uploadedFile.getFileName());
@@ -68,9 +69,11 @@ public class DoModifyServlet extends HttpServlet {
 		}
 		boolean isSuccess = boardBiz.updateBoard(board);
 		if ( isSuccess ) {
-			response.sendRedirect("/Board/board/detail?boardId=" + boardId);
+			response.sendRedirect("/Mables/board/detail?boardId=" + boardId);
 		}
-		
+		else{
+			response.sendRedirect("/Mables/board/write?errorCode=1");
+		}
 	}
 	
 

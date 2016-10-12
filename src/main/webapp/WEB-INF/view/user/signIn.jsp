@@ -1,13 +1,8 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
     pageEncoding="UTF-8"%>
-<!DOCTYPE html>
-<html>
-<head>
-<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
-<title>Insert title here</title>
-</head>
-<link rel="stylesheet" type="text/css" href="/Mables/css/login.css"/>
+
 <script type="text/javascript" src="/Mables/js/jquery-3.1.1.js"></script>
+<link rel="stylesheet" type="text/css" href="/Mables/css/login.css"/>
 <script type="text/javascript">
 	$(document).ready(function(){
 		
@@ -73,21 +68,18 @@
 	});
 	
 </script>
-<body>
+		
+		<div class="login">
+			<form id="signInForm" name="signInForm">
+				<div>
+					<div><input type="text" id="userEmail" name="userEmail" placeholder="Email 또는 ID를 적어주세요"> </div>
+					<div><input type="password" id="userPassword" name="userPassword" placeholder="Password를 적어주세요"/></div>
+				</div>
+				<div>
+					<div class="inline"><input type="button" id="signInBtn" value="Sign In"/></div>
+					<div class="inline"><input type="button" id="signUpBtn" value="Sign Up"/></div>
+					<div class="inline"><input type="button" id="cancleBtn" value="Cancle"/></div>
+				</div>
+			</form>
+		</div>
 
-	<div id="wrapper">
-		<form id="signInForm" name="signInForm">
-			<div>
-				<div><input type="text" id="userEmail" name="userEmail" placeholder="Email 또는 ID를 적어주세요"> </div>
-				<div><input type="password" id="userPassword" name="userPassword" placeholder="Password를 적어주세요"/></div>
-			</div>
-			<div>
-				<div><input type="button" id="signInBtn" value="Sign In"/></div>
-				<div><input type="button" id="signUpBtn" value="Sign Up"/></div>
-				<div><input type="button" id="cancleBtn" value="Cancle"/></div>
-			</div>
-		</form>
-	</div>
-
-</body>
-</html>

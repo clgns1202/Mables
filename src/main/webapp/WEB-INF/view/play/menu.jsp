@@ -15,7 +15,7 @@
 	});
 </script>
 
-<div class="menubar" id="menubar">
+<div class="menubar" id="menubar" style="display: none">
 	<div class="menu" id="menu">
 
 		<ul>

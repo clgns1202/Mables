@@ -11,8 +11,8 @@
 <script type="text/javascript" src="/Mables/js/jquery-3.1.1.js"></script>
 <script type="text/javascript">
 	$(document).ready(function() {
-		$("#menubar").hide();
-		$("#sign-in").hide();
+		
+		$("#sign-in").load("/Mables/signIn");
 
 		$("#nav ul li").click(function() {
 			var index = $(this).index();
@@ -45,6 +45,8 @@
 				}
 
 			}
+			
+			
 
 		});
 
@@ -67,11 +69,8 @@
 
 	</div>
 
-	<div class="sign-in" id="sign-in">
-		<form id="loginForm" name="loginForm">
-			Id : <input type="text" name="userId" id="userId" /> pwd : <input
-				type="password" name="userPwd" id="userPwd" />
-		</form>
+	<div class="sign-in" id="sign-in" style="display: none">
+		
 	</div>
 
 <jsp:include page="/WEB-INF/view/play/menu.jsp" />
