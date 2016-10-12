@@ -18,7 +18,6 @@
 			var index = $(this).index();
 			if (index == 1) {
 				$("#marbleBoard").load("/Mables/setMarbleBoard");
-				
 			}
 			
 			if (index == 2) {
