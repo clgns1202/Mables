@@ -31,6 +31,7 @@ public class DoSignUpPageServlet extends HttpServlet {
 	protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 		
 		response.setCharacterEncoding("UTF-8");
+		request.setCharacterEncoding("UTF-8");
 		
 		String userEmail = Param.getStringParam(request, "userEmail");
 		String userNickname = Param.getStringParam(request, "userNickname");
@@ -68,10 +69,9 @@ public class DoSignUpPageServlet extends HttpServlet {
 			user.setUserNickname(userNickname);
 			user.setUserPassword(userPassword1);
 			userBiz.signUpUser(user);
-			
+			errorMessage = "success";
 		}
 	
-		System.out.println(errorMessage);
 		PrintWriter out = response.getWriter();
 		out.write(errorMessage+"");
 		out.flush();
