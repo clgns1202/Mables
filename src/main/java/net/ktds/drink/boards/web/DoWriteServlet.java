@@ -40,9 +40,11 @@ public class DoWriteServlet extends HttpServlet {
 		
 		MultipartHttpServletRequest multipartRequest = new MultipartHttpServletRequest(request);
 		
+		String boardId = "wdoinqwdon";
 		String boardSubject = multipartRequest.getParameter("boardSubject");
 		String boardContent = multipartRequest.getParameter("boardContent");
-		String categoryId = multipartRequest.getParameter("categoryId");
+		String boardUserId = "wqeqwd";
+		String categoryId = "qwrqwqdq";
 		
 		String fileName = "";
 		MultipartFile uploadFile = multipartRequest.getFile("file");
@@ -62,21 +64,22 @@ public class DoWriteServlet extends HttpServlet {
 		UserVO userVO = (UserVO) session.getAttribute(Session.USER_INFO);
 		
 		BoardVO board = new BoardVO();
+		board.setBoardId(boardId);
 		board.setBoardSubject(boardSubject);
 		board.setBoardContent(boardContent);
-		board.setCategoryId(categoryId);
-		board.setUserId(userVO.getUserId());
+		board.setUserId(boardUserId);
 		board.setFileName(fileName);
+		board.setCategoryId(categoryId);
 		
 		boolean isSuccess = boardBiz.addBoard(board);
-		if ( isSuccess ) {
-			String userId = userVO.getUserId();
+
+		if (isSuccess) {
 			response.sendRedirect("/Mables/board/list");
-		}
-		else {
-			response.sendRedirect("/Mables/baord/write?errorCode=1");
+		} else {
+			response.sendRedirect("/Mables/board/write?errorCode=1");
 		}
 		
+
 	}
 
 }

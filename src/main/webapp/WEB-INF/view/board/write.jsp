@@ -1,14 +1,8 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
 	pageEncoding="UTF-8"%>
-<%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core"%>
-<!DOCTYPE html>
-<html>
-<head>
-<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
-<title>Insert title here</title>
-<link rel="stylesheet" type="text/css" href="/Mables/css/layout.css" />
-<link rel="stylesheet" type="text/css" href="/Mables/css/grid.css" />
-<script type="text/javascript" src="/Mables/js/jquery-3.1.1.js"></script>
+
+<jsp:include page="/WEB-INF/view/common/header.jsp" />
+
 <script type="text/javascript">
 	$(document).ready(function() {
 
@@ -46,11 +40,11 @@
 		$("#writeBtn").click(function() {
 			$("#writeForm").attr({
 				method : "post",
-				action : "/doWrite"
+				action : "/Mables/doWrite"
 			}).submit();
 		});
 		
-		$("#categoryId").val("categoryId;");
+
 			
 
 		function isVisibleWriteBtn() {
@@ -60,12 +54,12 @@
 				$("writeBtn").hide();
 			}
 		}
-
+;
 	})
 </script>
 </head>
 <body>
-	<form id="writeForm" name="writeForm" enctype="mitipart/form-data">
+	<form id="writeForm" name="writeForm" enctype="multipart/form-data">
 		<div>
 			<input type="text" id="boardSubject" name="boardSubject"
 				placeholder="제목을 입력하세요">
@@ -85,9 +79,7 @@
 			<div class="inline">
 				<input type="button" id="writeBtn" value="글쓰기" />
 			</div>
-			</div>
-			<input type="hidden" id="chooseCategory" name="chooseCategory" />
-			<div class="clear"></div>
+
 		</div>
 	</form>
 
