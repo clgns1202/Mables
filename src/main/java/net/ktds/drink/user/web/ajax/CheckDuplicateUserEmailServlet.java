@@ -34,6 +34,7 @@ public class CheckDuplicateUserEmailServlet extends HttpServlet {
 		
 		boolean isExsistUserEmail = userBiz.isExsistUserEmail(userEmail);
 		
+		
 		PrintWriter out = response.getWriter();
 		out.write(isExsistUserEmail + "");
 		out.flush();

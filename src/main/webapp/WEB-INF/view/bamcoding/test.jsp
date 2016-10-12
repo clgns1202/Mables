@@ -29,6 +29,27 @@ $().ready(function() {
 	var pointY = 0;
 	var count = 0;
 	$(".moveBtn").click(function() {
+		
+		var number =0;
+		
+		$.post("/Mables/doThrowCube" ,  function(data){
+			number = parseInt(data);
+			var showTime = 0;
+			$(".moveBtn").hide(500);
+			for(var i=0; i<number; i++){
+				showTime = i*300;
+				setTimeout(moveCube, showTime);
+			}
+			setTimeout(function(){
+				$(".moveBtn").show(500);			
+			}, showTime);
+		});
+		
+		
+	}); 
+	
+	
+	function moveCube(){
 		if (move == "x+") {
 			pointX += 120;
 			count += 1;
@@ -79,7 +100,8 @@ $().ready(function() {
 				move = "x+";
 			}
 		}
-	});
+	}
+	
 	
 	
 	// 카드 플립부분
@@ -95,17 +117,54 @@ $().ready(function() {
 		}
 	});
 	
+	
+	var preNum = 0;	
 	//던지기 부분
-	$(".throwBtn").click(function(){
-		$(this).mousedown(function(){
-			$(".cube").addClass("actionMove");
-		});	
-		$(this).mouseleave(function(){
-			$(".cube").removeClass("actionMove");
+	$(".cubeFrame").click(function(){
+		
+		$.post("/Mables/doThrowCube" ,  function(data){
+		
+		var showTime = 1000;
+		var number = parseInt(data);
+		$("#bling").addClass("bling");
+		$("#cube").addClass("actionMove");
+		
+		setTimeout(function(){
+			$("#cube").removeClass("actionMove");
+			},showTime);
+		
+		console.log("전꺼:"+preNum +" 지금:"+number);
+		$("#cube").removeClass("cube");
+		if(preNum != 0){
+			$("#cube").addClass("show"+number);
+			$("#cube").	removeClass("show"+preNum+"");
+		}else {
+			$("#cube").addClass("show"+number);
+		}
+		preNum = number;
+		
+		
+		for(var i=0; i<number; i++){
+			showTime += 400;
+			setTimeout(moveCube, showTime);
+		}
+		setTimeout(function(){
+			$("#bling").removeClass("bling");
+		}, showTime+700);
+		
 		});
+
+			
+			
+			
+			
+			
+			
 	});
 	
 });
+
+
 </script>
 <!-- 게임 UI -->
 	<div class="grimFrame">
@@ -116,17 +175,17 @@ $().ready(function() {
 
 <!-- 큐브 부분 -->
 	<div class="cubeFrame">
-		<div class="cube">
+		<div class="cube" id="cube">
 			<div class="front side item">1</div>
-			<div class="back side item">2</div>
+			<div class="back side item">6</div>
 			<div class="left side item">3</div>
 			<div class="right side item">4</div>
 			<div class="top side item">5</div>
-			<div class="bottom side item">6</div>
+			<div class="bottom side item">2</div>
 		</div>
 	</div>
 <!-- 카드 뒤집기 부분 -->
-<div id="container"">
+<div id="container">
   <div id="flipper">
     <div class="flip_front">
       <span class="name">Post it</span>
@@ -141,6 +200,6 @@ $().ready(function() {
 <!-- 큐브 던지는 부분 -->
 <div class="throwBtn">PUSH</div>
 
-
+<div id="bling"></div>
 </body>
 </html>

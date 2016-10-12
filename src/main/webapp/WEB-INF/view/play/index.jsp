@@ -7,5 +7,6 @@
 
 
 <div id="marbleBoard"></div>
+<div id="cubeDiv"></div>
 
 <jsp:include page="/WEB-INF/view/common/footer.jsp" />

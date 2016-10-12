@@ -50,6 +50,8 @@ public class DoModifyServlet extends HttpServlet {
 			String fileName = boardBiz.getFileNameOfBoardBy(boardId);
 			File file = new File("D:\\board\\uploadfiles\\" + fileName );
 			file.delete();
+			
+			board.setFileName("");
 		}
 		
 		MultipartFile uploadedFile = multipartRequest.getFile("file");
