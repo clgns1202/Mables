@@ -3,6 +3,15 @@
 #marble {
 	width: 100%;
 	position: relative;
+	z-index: 1;
+}
+
+#marble table td div.gameInfo {
+	display: none;
+}
+
+#marble table td div.gameType {
+	display: none;
 }
 
 #gamePan {

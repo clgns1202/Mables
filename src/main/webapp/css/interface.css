@@ -28,6 +28,7 @@ body {
     position: fixed;
     top: 0;
     width: 100%;
+    z-index: 80;
 }
 
 
@@ -70,6 +71,7 @@ body {
 	overflow: auto;
 	top: 50px;
 	background-color: #CCC;
+	z-index: 90;
 }
 
 .menubar .menu ul {
@@ -111,5 +113,6 @@ body {
 
 .sign-in {
 	top: 60px;
-	position: absolute;
+	position: fixed;
+	z-index: 89;
 }

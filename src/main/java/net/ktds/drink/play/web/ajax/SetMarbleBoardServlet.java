@@ -34,15 +34,15 @@ public class SetMarbleBoardServlet extends HttpServlet {
 		PlayVO play = null;
 		for(int i=0; i<23; i++){
 			play = new PlayVO();
-			play.setPlayInfoId("play"+ i%7 +"asdf");
-			play.setUserId("play"+ i%7 +"asdf");
-			play.setGameId("play"+ i%7 +"asdf");
+			play.setPlayInfoId("play"+ i%7 +"PlayInfoId");
+			play.setUserId("play"+ i%7 +"UserId");
+			play.setGameId("play"+ i%7 +"GameId");
 			
 			play.setGames(new GamesVO());			
-			play.getGames().setGameId("play"+ i%7 +"asdf");
-			play.getGames().setGameName("play"+ i%7 +"asdf");
-			play.getGames().setGameInfo("play"+ i%7 +"asdf");
-			
+			play.getGames().setGameId("play"+ i%7 +"GameId");
+			play.getGames().setGameName("play"+ i%7 +"GameName");
+			play.getGames().setGameInfo("play"+ i%7 +"GameInfo");
+			play.getGames().setTypeId("play"+ i%7 + "TypeId");
 			plays.add(play);
 		}
 		
