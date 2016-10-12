@@ -10,21 +10,15 @@
 
 $().ready(function(){
 	
+	var result = 0;
 	var currdeg = 0;
+	result = parseInt(Math.random()*6)+1;
+	
 	$(".next").click(function(){
-		currdeg = currdeg + 60;
-		$(".carousel").css("-webkit-transform","rotateY(" + currdeg + "deg)");
-		$(".carousel").css("-moz-transform","rotateY(" + currdeg + "deg)");
-		$(".carousel").css("-o-transform","rotateY(" + currdeg + "deg)");
-		$(".carousel").css( "transform","rotateY(" + currdeg + "deg)");
+		currdeg = currdeg + result*600;
+		$(".carousel").css( "animation","spinGoldKey 4s infinite linear");
 	});
-	$(".prev").click(function(){
-		currdeg = currdeg - 60;
-		$(".carousel").css("-webkit-transform","rotateY(" + currdeg + "deg)");
-		$(".carousel").css("-moz-transform","rotateY(" + currdeg + "deg)");
-		$(".carousel").css("-o-transform","rotateY(" + currdeg + "deg)");
-		$(".carousel").css( "transform","rotateY(" + currdeg + "deg)");
-	});
+
 	
 });
 
@@ -44,6 +38,5 @@ $().ready(function(){
   </div>
 </div>
 <div class="next">Next</div>
-<div class="prev">Prev</div>
 </body>
 </html>
