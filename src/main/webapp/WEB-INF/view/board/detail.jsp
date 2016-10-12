@@ -5,11 +5,12 @@
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
 <title>Board detail</title>
-<!--  <link rel="stylesheet" type="text/css" href="/DrinkMable/css/layout.css" /> -->
+<link rel="stylesheet" type="text/css" href="/DrinkMable/css/layout.css" />
+<script type="text/javascript" src="/Mables/js/jquery-3.1.1.js"></script>
 </head>
 <body>
 <!-- header -->
-
+<jsp:include page="/WEB-INF/view/common/header.jsp" />
 <div>
 	<div>제목
 	</div>
@@ -21,5 +22,6 @@
 </div>
 
 <!-- footer -->
+<jsp:include page="/WEB-INF/view/common/footer.jsp" />
 </body>
 </html>

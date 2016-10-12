@@ -287,12 +287,6 @@ public class BoardDaoImpl extends DaoSupport implements BoardDao{
 			
 		});
 	}
-
-	@Override
-	public List<BoardVO> selectBoardLists(SearchBoardVO searchBoard) {
-		// TODO Auto-generated method stub
-		return null;
-	}
 	
 }
 

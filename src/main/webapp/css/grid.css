@@ -3,12 +3,12 @@
 .grid {
 	width: 100%;
 	border-collapse: collapse;
-	background-color: #FFFFFF;
+	background-color: #c0c0c0;
 	border-radius: 5px;
 }
 
 .grid th, td {
-	border-left: 1px solid #BBBBBB;
+	border-left: 1px solid #ffffff;
 }
 
 .grid th:FIRST-CHILD {
@@ -24,13 +24,13 @@
 }
 
 .grid th {
-	padding: 10px;
+	padding: 7px;
 	background-color: #DDDDDD;
 	font-weight: bold;
 }
 
 .grid td {
-	padding: 7px;
+	padding: 5px;
 }
 
 .grid td:FIRST-CHILD {

@@ -3,38 +3,53 @@
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core"%>
 <%@ taglib prefix="fn" uri="http://java.sun.com/jsp/jstl/functions"%>
 <%@ taglib prefix="fmt" uri="http://java.sun.com/jsp/jstl/fmt"%>
+
 <!DOCTYPE html>
 <html>
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
 <title>Board List</title>
+<link rel="stylesheet" type="text/css" href="/Mables/css/layout.css" />
+<link rel="stylesheet" type="text/css" href="/Mables/css/grid.css" />
 <script type="text/javascript" src="/Mables/js/jquery-3.1.1.js"></script>
 </head>
 <body>
 <!-- header -->
+<jsp:include page="/WEB-INF/view/common/header.jsp" />
 
 <div id ="list">
+	<table class="grid">
+		<tr>
+			<th>글번호</th>
+			<th>제목</th>
+			<th>닉네임</th>
+			<th>작성일</th>
+			<th>조회수</th>
+			<th>추천수</th>
+		</tr>
 
-	<div id = "list1">
-		<div>글번호</div>
-		<div>제목</div>
-		<div>닉네임</div>
-		<div>작성일</div>
-		<div>조회수</div>
-		<div>추천수</div>
-	</div>
-	<c:forEach items="${boards}" var="board">
-		<div id = "list2">
+		<tr>
+			<td>1345</td>
+			<td>안녕하세요 처음뵙겠습니다.</td>
+			<td>백곰한마리7777</td>
+			<td>2016-10-12 10:09:52</td>
+			<td>15</td>
+			<td>5</td>
+		<tr>
+
+		<c:forEach items="${boards}" var="board">
+		<tr>
 			<c:set var="number" value="${fn:split(board.boardId, '-')[2] }" />
 			<fmt:parseNumber var="number" type="number" value="${number }" />
-			<div>${number }</div>
-			<div><a href="/Mables/board/detail?boardId=${board.boardId }">${board.boardSubject }</a></div>
-			<div>${board.userVO.userNickname }</div>
-			<div>${board.createdDate }</div>
-			<div>${board.hitCount }</div>
-			<div>${board.recommendCount }</div>
-		</div>
-	</c:forEach>
+			<td>${number }</td>
+			<td><a href="/Mables/board/detail?boardId=${board.boardId }">${board.boardSubject }</a></td>
+			<td>${board.userVO.userNickname }</td>
+			<td>${board.createdDate }</td>
+			<td>${board.hitCount }</td>
+			<td>${board.recommendCount }</td>
+		</tr>
+		</c:forEach>
+	</table>
 	
 	<div id = "paging">
 		${paging}
@@ -63,5 +78,9 @@
 </div>
 
 <!-- footer -->
+<div>
+	<jsp:include page="/WEB-INF/view/common/footer.jsp" />
+</div>
+
 </body>
 </html>
