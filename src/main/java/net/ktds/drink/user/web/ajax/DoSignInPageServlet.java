@@ -7,7 +7,9 @@ import javax.servlet.ServletException;
 import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
+import javax.servlet.http.HttpSession;
 
+import net.ktds.drink.constants.Session;
 import net.ktds.drink.support.Param;
 import net.ktds.drink.user.biz.UserBiz;
 import net.ktds.drink.user.biz.UserBizImpl;
@@ -43,7 +45,6 @@ public class DoSignInPageServlet extends HttpServlet {
 			out.write(message+"");
 		}
 		else{
-			
 			UserVO user = new UserVO();
 			user.setUserEmail(userEmail);
 			user.setUserPassword(userPassword);
