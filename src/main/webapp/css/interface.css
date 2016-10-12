@@ -10,6 +10,15 @@ body {
 	top: 80px;
 }
 
+.footer {
+	margin: 0;
+	padding: 0;
+	overflow: hidden;
+	bottom: 0;
+	position: fixed;
+	width: 100%;
+}
+
 .nav ul {
     list-style-type: none;
     margin: 0;
@@ -100,6 +109,7 @@ body {
     color: white;
 }
 
-div.sign-in {
-	top: 55px;
+.sign-in {
+	top: 60px;
+	position: absolute;
 }

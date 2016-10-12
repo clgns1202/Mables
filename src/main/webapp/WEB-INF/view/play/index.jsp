@@ -6,6 +6,6 @@
 <jsp:include page="/WEB-INF/view/play/menu.jsp" />
 
 
-
+<div id="marbleBoard"></div>
 
 <jsp:include page="/WEB-INF/view/common/footer.jsp" />

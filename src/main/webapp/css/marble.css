@@ -1,0 +1,19 @@
+@CHARSET "UTF-8";
+
+#marble {
+	width: 100%;
+	position: relative;
+}
+
+#marble table {
+	margin: 0 auto;
+}
+
+#marble table tr {
+	height: 100px;
+}
+
+#marble table td {
+	width: 140px;
+	text-align: center;
+}

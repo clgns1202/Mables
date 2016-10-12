@@ -31,9 +31,8 @@ $().ready(function(){
       <span class="name">Post it</span>
     </div>
     <div class="flip_back">
-      <div class="back-logo"></div>
-      <div class="back-title">V라인 옥수수 수염차</div>
-      <p> 고온다습 직사광선을 피해 보관하시고, 개봉후에는 반드시 밀봉하여 냉장 보관하시고 빨리 드시기 바랍니다. </p>
+      <div class="back-title">황금열쇠</div>
+      <p> 고온다습 직사광선을 피해 보관하시기 바랍니다. </p>
     </div>
   </div>
 </div>

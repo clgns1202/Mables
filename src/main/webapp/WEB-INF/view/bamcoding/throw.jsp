@@ -4,6 +4,8 @@
 <html>
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<link rel="stylesheet" type="text/css"  href="/Mables/bamcoding_css/cube.css"/>
+
 <script type="text/javascript" src="/Mables/js/jquery-3.1.1.js"></script>
 
 </head>
@@ -11,18 +13,16 @@
 
 <script type="text/javascript">
 	$().ready(function(){
-		$(".push").click(function(){
+		$(".throwBtn").click(function(){
 			$(this).mousedown(function(){
 				$(".ball").addClass("actionMove");
 			});	
-			$(this).mouseleave(function(){
-				$(".ball").removeClass("actionMove");
-			});
+			return false;
 		});
 	});
 </script>
 <style>
-.push {
+.throwBtn {
   display: block;
   position: absolute;
   background: #ccc;
@@ -38,7 +38,7 @@
   transition: box-shadow 0.1s, top 0.1s;
 }
 
-.push:active {
+.throwBtn:active {
 	left:10px;
 	top: 15px;
 	box-shadow: 0 1px 0 #999;
@@ -99,7 +99,7 @@
 }
 </style>
 
-<div class="push">PUSH</div>
+<div class="throwBtn">PUSH</div>
 
 
 <div class="ball">CUBE</div>
