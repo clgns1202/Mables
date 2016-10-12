@@ -17,9 +17,7 @@
 		$("#nav ul li").click(function() {
 			var index = $(this).index();
 			if (index == 1) {
-				$("#marble").load("/Mables/setMarbleBoard", function(data){
-					
-				});
+				$("#marbleBoard").load("/Mables/setMarbleBoard");
 				
 			}
 			
