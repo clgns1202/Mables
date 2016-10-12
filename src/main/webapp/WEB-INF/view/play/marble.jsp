@@ -2,13 +2,10 @@
 	pageEncoding="UTF-8"%>
 
 <link rel="stylesheet" type="text/css" href="/Mables/css/marble.css" />
-<link rel="stylesheet" type="text/css"
-	href="/Mables/bamcoding_css/cube.css" />
-<link rel="stylesheet" type="text/css"
-	href="/Mables/bamcoding_css/flip.css" />
-<link rel="stylesheet" type="text/css"
-	href="/Mables/bamcoding_css/gamePan.css" />
-
+<link rel="stylesheet" type="text/css"	href="/Mables/bamcoding_css/cube.css" />
+<link rel="stylesheet" type="text/css"	href="/Mables/bamcoding_css/flip.css" />
+<link rel="stylesheet" type="text/css"	href="/Mables/bamcoding_css/gamePan.css" />
+<link rel="stylesheet" type="text/css" href="/Mables/bamcoding_css/carousel.css">
 <script type="text/javascript">
 	$(document).ready(
 			function() {
@@ -88,9 +85,9 @@
 				var preNum = 0;
 				//던지기 부분
 				$(".cubeFrame").click(function() {
-
+					//AJAX 처리 파라미터는 없다
 					$.post("/Mables/doThrowCube", function(data) {
-
+						
 						var showTime = 1000;
 						var number = parseInt(data);
 						$("#bling").addClass("bling");
@@ -118,14 +115,11 @@
 							$("#bling").removeClass("bling");
 							getPenalty();
 						}, showTime + 700);
-
-						
-						
-						
+	
 					});
-
 				});
 				
+				//게임판의 좌표를 1~24까지의 정수로 표현하여 저장
 				function getPenalty(){
 					var x = pointX/pxX;
 					var y = pointY/pxY;
@@ -142,10 +136,24 @@
 						positionIndex = (2 * cellX) + cellY + (cellY + y);
 					}
 					
-					var div = $("#cell"+positionIndex+" .gameInfo").text();
+					
+					//황금 열쇠가 선택 되었을 때의 이벤트 처리
+					var div = $("#cell"+positionIndex+" .gameType").text();
 					alert(div);
+					if(div == "GOLD_KEY"){
+						
+					}
 				}
 
+				var result = 0;
+				var currdeg = 0;
+				result = parseInt(Math.random()*6)+1;
+				
+				$(".roll").click(function(){
+					currdeg = currdeg + result*600;
+					$("#keyCard").css( "animation","spinGoldKey 4s infinite linear");
+				});
+				
 			});
 </script>
 <div id="marble">
@@ -295,12 +303,12 @@
 		<!-- 큐브 부분 -->
 		<div class="cubeFrame">
 			<div class="cube" id="cube">
-				<div class="front side item">1</div>
-				<div class="back side item">6</div>
-				<div class="left side item">3</div>
-				<div class="right side item">4</div>
-				<div class="top side item">5</div>
-				<div class="bottom side item">2</div>
+				<div class="front side">1</div>
+				<div class="back side">6</div>
+				<div class="left side">3</div>
+				<div class="right side">4</div>
+				<div class="top side">5</div>
+				<div class="bottom side">2</div>
 			</div>
 		</div>
 		<!-- 카드 뒤집기 부분 -->
@@ -315,7 +323,20 @@
 				</div>
 			</div>
 		</div>
-
+		
+		<!-- 황금 열쇠 연출 부분 -->
+		<div id="keyCardFrame">
+		  <div id="keyCard">
+		    <div class="item a">A</div>
+		    <div class="item b">B</div>
+		    <div class="item c">C</div>
+		    <div class="item d">D</div>
+		    <div class="item e">E</div>
+		    <div class="item f">F</div>
+		  </div>
+		</div>
+		
+		<div class="roll">ROLL</div>
 
 		<div id="bling"></div>
 		<div id="viewInfo"></div>

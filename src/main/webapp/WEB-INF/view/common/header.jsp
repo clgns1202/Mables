@@ -57,7 +57,6 @@
 		<ul>
 			<li><label>주루마블</label></li>
 			<li><label>Game Start</label></li>
-
 			<li><label><i class="material-icons">subject</i></label></li>
 			<li><label>sign-in</label></li>
 			<li><label>sign-up</label></li>
