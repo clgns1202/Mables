@@ -25,8 +25,29 @@ public class BoardBizImpl implements BoardBiz{
 
 	@Override
 	public boolean updateBoard(BoardVO board) {
+		BoardVO originalBoard = boardDao.selectBoard(board.getBoardId());
 		
-		return false;
+		int modifyCount = 3;
+		
+		if ( originalBoard.getBoardSubject().equals(board.getBoardSubject()) ) {
+			board.setBoardSubject(null);
+			modifyCount--;
+		}
+		if ( originalBoard.getBoardContent().equals(board.getBoardContent())) {
+			board.setBoardContent(null);
+			modifyCount--;
+		}
+		if ( originalBoard.getFileName() == null ) {
+			originalBoard.setFileName("");
+		}
+		if ( originalBoard.getFileName().equals(board.getFileName())) {
+			board.setFileName(null);
+			modifyCount--;
+		}
+		if ( modifyCount == 0) {
+			return true;
+		}
+		return boardDao.updateBoard(board) > 0;
 	}
 
 	public BoardListVO getBoardListsOf(SearchBoardVO searchBoard) {
@@ -48,6 +69,17 @@ public class BoardBizImpl implements BoardBiz{
 
 	@Override
 	public BoardVO getBoardAt(String boardId) {
+		return boardDao.selectBoard(boardId);
+	}
+
+	@Override
+	public String getFileNameOfBoardBy(String boardId) {
+		BoardVO board = boardDao.selectBoard(boardId);
+		return board.getFileName();
+	}
+
+	@Override
+	public BoardVO getBoardForModify(String boardId) {
 		return boardDao.selectBoard(boardId);
 	}
 	

@@ -1,9 +1,21 @@
 package net.ktds.drink.play.vo;
 
-public class playVO {
+import net.ktds.drink.games.vo.GamesVO;
+
+public class PlayVO {
 	private String playInfoId;
 	private String userId;
 	private String gameId;
+
+	private GamesVO games;
+
+	public GamesVO getGames() {
+		return games;
+	}
+
+	public void setGames(GamesVO games) {
+		this.games = games;
+	}
 
 	public String getPlayInfoId() {
 		return playInfoId;

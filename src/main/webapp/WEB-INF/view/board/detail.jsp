@@ -30,7 +30,7 @@
 		<a href="/Mables/board/modify?boardId=${board.boardId }">수정</a>
 		<a>목록보기</a>
 	</div>
-</div>
+</div> 
 
 <!-- footer -->
 <jsp:include page="/WEB-INF/view/common/footer.jsp" />

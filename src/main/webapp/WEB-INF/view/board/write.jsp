@@ -19,7 +19,7 @@
 			alert("글 저장에 실패 하였습니다.");
 		}
 		$("#goBackBtn").click(function() {
-			location.href = "Mables/board/list";
+			location.href = "/Mables/board/list";
 		});
 		$("#boardSubject").keyup(function() {
 			if ($(this).val() == "") {
@@ -46,7 +46,7 @@
 		$("#writeBtn").click(function() {
 			$("#writeForm").attr({
 				method : "post",
-				action : "/doWrite"
+				action : "/Mables/doWrite"
 			}).submit();
 		});
 		
@@ -57,15 +57,15 @@
 			if ($(".pass").length == 2) {
 				$("#writeBtn").show(500);
 			} else {
-				$("writeBtn").hide();
+				$("#writeBtn").hide();
 			}
 		}
-
+;
 	})
 </script>
 </head>
 <body>
-	<form id="writeForm" name="writeForm" enctype="mitipart/form-data">
+	<form id="writeForm" name="writeForm" enctype="multipart/form-data">
 		<div>
 			<input type="text" id="boardSubject" name="boardSubject"
 				placeholder="제목을 입력하세요">
@@ -86,8 +86,10 @@
 				<input type="button" id="writeBtn" value="글쓰기" />
 			</div>
 			</div>
-			<input type="hidden" id="chooseCategory" name="chooseCategory" />
+			<input type="hidden" name="CategoryId" value="${board.categoryId}" />
 			<div class="clear"></div>
+			
+
 		</div>
 	</form>
 

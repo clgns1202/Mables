@@ -3,6 +3,8 @@
 
 </div>
 
+<div class="footer" id="footer">
 @±Â
+</div>
 </body>
 </html>

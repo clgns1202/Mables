@@ -1,10 +1,13 @@
 @CHARSET "UTF-8";
 
 #container {
-  -webkit-perspective: 1000;
-  -moz-perspective: 1000;
-  -o-perspective: 1000;
-  perspective: 1000;
+	position:absolute;
+	top:400px;
+	left:200px;
+	-webkit-perspective: 1000;
+	-moz-perspective: 1000;
+	-o-perspective: 1000;
+ 	perspective: 1000;
 
 	border: 1px solid #ccc;
 }
@@ -16,12 +19,13 @@
 		transform: rotateY(180deg);
 	}
 
-#container, .front, .back {
-	width: 320px;
-	height: 427px;
+#container, .flip_front, .flip_back {
+	width: 150px;
+	height: 250px;
 }
 
 #flipper {
+	
 	-webkit-transition: 0.6s;
 	-webkit-transform-style: preserve-3d;
 
@@ -37,7 +41,7 @@
 	position: relative;
 }
 
-.front, .back {
+.flip_front, .flip_back {
 	-webkit-backface-visibility: hidden;
 	-moz-backface-visibility: hidden;
   -o-backface-visibility: hidden;
@@ -48,12 +52,14 @@
 	left: 0;
 }
 
-.front {
-	background: url(http://localhost:8080/DrinkMable/img/carousel/lake-tekapo.jpg) 0 0 no-repeat;
+.flip_front {
+	background: url(/Mables/img/key.png);
+	background-size: 150px 250px;
+    background-repeat: no-repeat;
 	z-index: 2;
 }
 
-.back {
+.flip_back {
 	-webkit-transform: rotateY(180deg);
 	-moz-transform: rotateY(180deg);
   -o-transform: rotateY(180deg);
@@ -62,8 +68,8 @@
 	background: #f8f8f8;
 }
 
-.front .name {
-	font-size: 2em;
+.flip_front .name {
+	font-size: 1em;
 	display: inline-block;
 	background: rgba(33, 33, 33, 0.9);
 	color: #f8f8f8;
@@ -87,29 +93,28 @@
 	left: 90px;
 	width: 160px;
 	height: 117px;
-	background: url(http://localhost:8080/DrinkMable/img/carousel/pink-milford-sound.jpg) 0 0 no-repeat;
 }
 
 .back-title {
 	font-weight: bold;
 	color: #00304a;
 	position: absolute;
-	top: 180px;
+	top: 30px;
 	left: 0;
 	right: 0;
 	text-align: center;
 	text-shadow: 0.1em 0.1em 0.05em #acd7e5;
 	font-family: Courier;
-	font-size: 2em;
+	font-size: 1em;
 }
 
-.back p {
+.flip_back p {
 	position: absolute;
-	bottom: 40px;
+	top: 60px;
 	left: 0;
 	right: 0;
 	text-align: center;
-	padding: 0 20px;
+	padding: 0 10px;
   	font-family: arial;
-  	line-height: 2em;
+  	line-height: 1em;
 }
