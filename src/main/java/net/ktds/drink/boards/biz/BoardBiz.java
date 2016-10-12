@@ -18,4 +18,6 @@ public interface BoardBiz {
 	
 	public BoardVO getBoardForModify(String boardId);
 	
+	public boolean removeBoard(String boardId);
+	
 }

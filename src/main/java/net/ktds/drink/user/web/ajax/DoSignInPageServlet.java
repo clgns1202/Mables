@@ -11,15 +11,15 @@ import javax.servlet.http.HttpServletResponse;
 import net.ktds.drink.support.Param;
 import net.ktds.drink.user.biz.UserBiz;
 import net.ktds.drink.user.biz.UserBizImpl;
+import net.ktds.drink.user.vo.UserVO;
 
-public class CheckDuplicateUserEmailServlet extends HttpServlet {
+public class DoSignInPageServlet extends HttpServlet {
 	private static final long serialVersionUID = 1L;
 	private UserBiz userBiz;
 
-	public CheckDuplicateUserEmailServlet() {
+	public DoSignInPageServlet() {
 		super();
 		userBiz = new UserBizImpl();
-		
 	}
 
 	protected void doGet(HttpServletRequest request, HttpServletResponse response)
@@ -30,17 +30,39 @@ public class CheckDuplicateUserEmailServlet extends HttpServlet {
 	protected void doPost(HttpServletRequest request, HttpServletResponse response)
 			throws ServletException, IOException {
 		
+		request.setCharacterEncoding("UTF-8");
+		response.setCharacterEncoding("UTF-8");
+		
 		String userEmail = Param.getStringParam(request, "userEmail");
-		
-		boolean isExsistUserEmail = userBiz.isExsistUserEmail(userEmail);
-		
-		
+		String userPassword = Param.getStringParam(request, "userPassword");
 		PrintWriter out = response.getWriter();
-		out.write(isExsistUserEmail + "");
+		String message = null;
+		boolean isSucessSignIn = false;
+		if( userEmail.length() == 0 && userPassword.length() == 0) {
+			message = "필수값을 입력하지 않았습니다.";
+			out.write(message+"");
+		}
+		else{
+			
+			UserVO user = new UserVO();
+			user.setUserEmail(userEmail);
+			user.setUserPassword(userPassword);
+			
+			isSucessSignIn = userBiz.signIn(user,request);
+			if ( isSucessSignIn ){
+				message = "true";
+				out.write(message+"");
+			}
+			else{
+				message = "false";
+				out.write(message+"");
+			}
+		}
+		
 		out.flush();
 		out.close();
 		
-		
+	
 	}
 
 }

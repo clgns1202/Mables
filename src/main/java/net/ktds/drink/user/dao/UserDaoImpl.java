@@ -98,6 +98,45 @@ public class UserDaoImpl extends DaoSupport implements UserDao {
 		
 	}
 
+	@Override
+	public UserVO getUserBy(UserVO user) {
+		UserVO userInfo = (UserVO)selectOne(new QueryAndResult() {
+			
+			@Override
+			public PreparedStatement query(Connection conn) throws SQLException {
+				StringBuffer query = new StringBuffer();
+				query.append(" SELECT	USR_ID ");
+				query.append(" 			, USR_EML ");
+				query.append(" 			, USR_PWD ");
+				query.append(" 			, POINTS ");
+				query.append(" 			, USR_NICK_NM ");
+				query.append(" FROM		USR	");
+				query.append(" WHERE	USR_EML = ?	");
+				query.append(" AND		USR_PWD = ? ");
+				PreparedStatement pstmt = conn.prepareStatement(query.toString());
+				pstmt.setString(1, user.getUserEmail());
+				pstmt.setString(2, user.getUserPassword());
+				return pstmt;
+			}
+			
+			@Override
+			public Object makeObject(ResultSet rs) throws SQLException {
+				UserVO userInfo = null;
+				if(rs.next()){
+					userInfo = new UserVO();
+					userInfo.setUserId(rs.getString("USR_ID"));
+					userInfo.setUserEmail(rs.getString("USR_EML"));
+					userInfo.setUserPassword(rs.getString("USR_PWD"));
+					userInfo.setUserNickname(rs.getString("USR_NICK_NM"));
+					userInfo.setPoints(rs.getInt("POINTS"));
+				}
+				return userInfo;
+				
+			}
+		});
+		return userInfo;
+	}
+
 
 
 }

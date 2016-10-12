@@ -40,11 +40,9 @@ public class DoWriteServlet extends HttpServlet {
 		
 		MultipartHttpServletRequest multipartRequest = new MultipartHttpServletRequest(request);
 		
-		String boardId = "wdoinqwdon";
 		String boardSubject = multipartRequest.getParameter("boardSubject");
 		String boardContent = multipartRequest.getParameter("boardContent");
-		String boardUserId = "wqeqwd";
-		String categoryId = "qwrqwqdq";
+		String categoryId = multipartRequest.getParameter("categoryName");
 		
 		String fileName = "";
 		MultipartFile uploadFile = multipartRequest.getFile("file");
@@ -64,10 +62,9 @@ public class DoWriteServlet extends HttpServlet {
 		UserVO userVO = (UserVO) session.getAttribute(Session.USER_INFO);
 		
 		BoardVO board = new BoardVO();
-		board.setBoardId(boardId);
 		board.setBoardSubject(boardSubject);
 		board.setBoardContent(boardContent);
-		board.setUserId(boardUserId);
+		board.setUserId(userVO.getUserId());
 		board.setFileName(fileName);
 		board.setCategoryId(categoryId);
 		

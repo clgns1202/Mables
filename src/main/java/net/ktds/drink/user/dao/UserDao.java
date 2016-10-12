@@ -21,4 +21,6 @@ public interface UserDao {
 
 	public int signUpUser(UserVO user);
 
+	public UserVO getUserBy(UserVO user);
+
 }
