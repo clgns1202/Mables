@@ -11,13 +11,24 @@
 <body>
 <!-- header -->
 <jsp:include page="/WEB-INF/view/common/header.jsp" />
+
 <div>
-	<div>제목
+	<div>
+		<div>${board.boardSubject }</div>
+		<div>
+			<div>${board.userVO.userNickname }</div>
+			<div>${board.createdDate }</div>
+			<div>${board.hitCount }</div>
+			<div>${board.recommendCount }</div>
+		</div>
+		<hr/>
+		<div>${board.content }</div>
 	</div>
-	<div>작성자 작성시간 조회수 추천수
-	</div>
-	<hr/>
-	<div>내용
+	<div>
+		추천
+		<a href="">삭제</a>
+		<a href="/Mables/board/modify?boardId=${board.boardId }">수정</a>
+		<a>목록보기</a>
 	</div>
 </div>
 
