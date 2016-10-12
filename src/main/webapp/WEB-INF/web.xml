@@ -76,6 +76,7 @@
   <servlet-mapping>
     <servlet-name>CheckDuplicateUserEmailServlet</servlet-name>
     <url-pattern>/CheckDuplicateUserEmailServlet</url-pattern>
+    <url-pattern>/duplicateUserEmail</url-pattern>
   </servlet-mapping>
   <servlet>
     <description></description>
@@ -155,5 +156,15 @@
   <servlet-mapping>
     <servlet-name>DoSignUpPageServlet</servlet-name>
     <url-pattern>/doSignUp</url-pattern>
+  </servlet-mapping>
+  <servlet>
+    <description></description>
+    <display-name>DoThrowCubeServlet</display-name>
+    <servlet-name>DoThrowCubeServlet</servlet-name>
+    <servlet-class>net.ktds.drink.play.web.ajax.DoThrowCubeServlet</servlet-class>
+  </servlet>
+  <servlet-mapping>
+    <servlet-name>DoThrowCubeServlet</servlet-name>
+    <url-pattern>/doThrowCube</url-pattern>
   </servlet-mapping>
 </web-app>

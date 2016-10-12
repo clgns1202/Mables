@@ -5,6 +5,13 @@
 	position: relative;
 }
 
+#gamePan {
+	width: 1050px;
+	position: relative;
+	margin: 0 auto;
+	padding: 0 auto;
+}
+
 #marble table {
 	margin: 0 auto;
 }

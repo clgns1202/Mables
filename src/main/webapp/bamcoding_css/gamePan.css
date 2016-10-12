@@ -1,57 +1,25 @@
 @CHARSET "UTF-8";
 
-.moveBtn {
-	top:150px;
-	left: 180px;
-	position: absolute;
-	display: block;
-	background: #ccc;
-	width: 150px;
-	height: 70px;
-	line-height: 70px;
-	font-size: 3em;
-	text-align: center;
-	color: #FFF;
-	border-radius: 10px;
-	box-shadow: 0px 5px 0 #999;
-	transition: box-shadow 0.1s, top 0.1s;
-}
-.throwBtn {
-	top:150px;
-	left: 450px;
-	position: absolute;
-	display: block;
-	background: #ccc;
-	width: 150px;
-	height: 70px;
-	line-height: 70px;
-	font-size: 3em;
-	text-align: center;
-	color: #FFF;
-	border-radius: 10px;
-	box-shadow: 0px 5px 0 #999;
-	transition: box-shadow 0.1s, top 0.1s;
-}
-.object {
+#gamePan .object {
   	position: absolute;
-	top:680px;
-	left:50px;
+	bottom: 13px;
+	left:36px;
   	display: block;
   	width: 100px;
-  	height: 100px;
-  	line-height: 100px;
+  	height: 80px;
+  	line-height: 80px;
   	font-size: 1.5em;
   	text-align: center;
-  	background: #ccc;
+  	background: #000;
   	color: #FFF;
   	border-radius: 25px;
-  	-webkit-transition: 0.6s;
+  	-webkit-transition: 0.3s;
 	-webkit-transform-style: preserve-3d;
-	-moz-transition: 0.6s;
+	-moz-transition: 0.3s;
 	-moz-transform-style: preserve-3d;
-	-o-transition: 0.6s;
+	-o-transition: 0.3s;
 	-o-transform-style: preserve-3d;
-	transition: 0.6s;
+	transition: 0.3s;
 	transform-style: preserve-3d;
 }
 
@@ -74,34 +42,4 @@ height:100%
 	position :absolute;
 	width:1250px;
 	height:800px;
-}
-
-/* 주사위 던지는 애니메이션*/
-.actionMove{
-	/*
-    -webkit-animation-name: throw;
-    -webkit-animation-duration: 4s;
-    */
-    animation-name: throw;
-    animation-duration: 5s;
-}
-
-/* Chrome, Safari, Opera *//*
-@-webkit-keyframes throw {
-    0%   { left:0px; top:0px; transform: rotateZ(0);}
-    5%   { left:300px; top:600px; transform: rotateZ(180deg);}
-    20%  { left:350px; top:400px; transform: rotateZ(300deg);}    
-    23%  { left:400px; top:600px; transform: rotateZ(360deg);}    
-    38%  { left:450px; top:470px; transform: rotateZ(420deg);}    
-    41%  { left:500px; top:600px; transform: rotateZ(480deg);}
-    56%  { left:550px; top:530px; transform: rotateZ(540deg);}    
-    59%  { left:600px; top:600px; transform: rotateZ(600deg);}
-    100% { left:700px; top:600px; transform: rotateZ(660deg);}
-}*/
-/* Standard syntax */
-@keyframes throw {
-    0%   { left:600px; top:400px; transform: rotateX(0deg) rotateY(0) rotateZ(0deg);}    
-    10%   { left:600px; top:400px; transform: rotateX(0deg) rotateY(180deg) rotateZ(0deg);}    
-    20%   { left:600px; top:-300px; transform: rotateX(0deg) rotateY(360deg) rotateZ(0deg);}    
-	100% { left:800px; top:500px; transform: rotateX(0deg) rotateY(0) rotateZ(660deg);}
 }
