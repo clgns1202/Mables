@@ -2,8 +2,8 @@
 
 #container {
 	position:absolute;
-	top:45%;
-	left:20%;
+	top:400px;
+	left:200px;
 	-webkit-perspective: 1000;
 	-moz-perspective: 1000;
 	-o-perspective: 1000;
