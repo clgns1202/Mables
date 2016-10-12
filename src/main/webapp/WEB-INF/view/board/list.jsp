@@ -28,15 +28,6 @@
 			<th>추천수</th>
 		</tr>
 
-		<tr>
-			<td>1345</td>
-			<td>안녕하세요 처음뵙겠습니다.</td>
-			<td>백곰한마리7777</td>
-			<td>2016-10-12 10:09:52</td>
-			<td>15</td>
-			<td>5</td>
-		<tr>
-
 		<c:forEach items="${boards}" var="board">
 		<tr>
 			<c:set var="number" value="${fn:split(board.boardId, '-')[2] }" />

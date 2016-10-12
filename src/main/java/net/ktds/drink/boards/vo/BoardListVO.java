@@ -12,7 +12,7 @@ public class BoardListVO {
 	public List<BoardVO> getBoardLists() {
 		return boards;
 	}
-	public void setBoardLists(List<BoardVO> boardLists) {
+	public void setBoardLists(List<BoardVO> boards) {
 		this.boards = boards;
 	}
 	public Pager getPager() {
