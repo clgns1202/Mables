@@ -67,7 +67,7 @@ public class BoardDaoImpl extends DaoSupport implements BoardDao{
 				query.append(" 			, U.USR_EML ");
 				query.append(" FROM		BOARD B ");
 				query.append(" 			, USR U ");
-				query.append(" WHERE	B.USR_ID = U.USR_ID ");
+				query.append(" WHERE	B.USR_ID = U.USR_ID(+) ");
 				
 				if (searchBoard.getSearchType() == 1) {
 					query.append(" AND ( B.BRD_SBJ LIKE '%' || ? || '%' ");
@@ -130,6 +130,7 @@ public class BoardDaoImpl extends DaoSupport implements BoardDao{
 					board.setUserVO(new UserVO());
 					board.getUserVO().setUserNickname(rs.getString("USR_NICK_NM"));
 					board.getUserVO().setUserEmail(rs.getString("USR_EML"));
+					
 					boards.add(board);
 				}
 				return boards;
