@@ -42,7 +42,7 @@ public class DoWriteServlet extends HttpServlet {
 		
 		String boardSubject = multipartRequest.getParameter("boardSubject");
 		String boardContent = multipartRequest.getParameter("boardContent");
-		String categoryId = multipartRequest.getParameter("categoryName");
+		String categoryId = "categoryName";
 		
 		String fileName = "";
 		MultipartFile uploadFile = multipartRequest.getFile("file");
