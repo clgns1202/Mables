@@ -4,18 +4,15 @@
 <%@ taglib prefix="fn" uri="http://java.sun.com/jsp/jstl/functions" %>
 <!DOCTYPE html>
 <html>
-<head>
 <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
 <title>Insert title here</title>
 <link rel="stylesheet" type="text/css" href="/Mables/css/layout.css" />
 <link rel="stylesheet" type="text/css" href="/Mables/css/grid.css" />
 <script type="text/javascript" src="/Mables/js/jquery-3.1.1.js"></script>
+<head>
+<jsp:include page="/WEB-INF/view/common/header.jsp" />
 <script type="text/javascript">
-	<c:if test="${sessionScope._USER_INFO_.userId ne }">
-		alert("허용되지 않은 접근입니다.");
-		location.href = "/Mables/board/list/init";
-	</c:if>
-	
+
 	$(document).ready(function() {
 		$("#goBackBtn").click(function() {
 			location.herf = "/Mables/board/detail?boardId=${board.boardId}";
@@ -55,11 +52,13 @@
 		$("#modifyBtn").click(function() {
 			$("#modifyForm").attr({
 				method : "post",
-				action : "/Mables/board/doModify"
+				action : "/Mables/doModify"
 			}).submit();
 		});
-	}){
+	});
 </script>
+</head>
+<body>
 <form id="modifyForm" name="modyfyForm" enctype="multipart/form-data">
 	<input type="hidden" name="boardId" value="${board.boardId}" />
 	<div>
@@ -71,7 +70,7 @@
 		${board.boardContent}
 		</textarea>
 	</div>
-	<c:if test="${not empty article.fileName }">
+	<c:if test="${not empty board.fileName }">
 	<div style="padding-top: 10px; padding-bottom: 10px" >
 		<input type="checkbox" id="fileDeleteBtn" name="fileDeleteBtn" value="delete" />
 		<img src="/Mables/img/text-file-3-xxl.png" style="width:12px;'" />
@@ -93,8 +92,5 @@
 		<div class="clear"></div>
 	</div>
 </form>
-</head>
-<body>
-
 </body>
 </html>

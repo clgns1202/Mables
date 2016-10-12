@@ -209,10 +209,10 @@ public class BoardDaoImpl extends DaoSupport implements BoardDao{
 				if ( board.getBoardContent() != null ) {
 					query.append( " , BRD_CONT = ? " );
 				}
-				if ( board.getBoardSubject() != null ) {
+				if ( board.getFileName() != null ) {
 					query.append( " , FILE_NM = ? " );
 				}
-				query.append(" WHERE	BRD_ID ");
+				query.append(" WHERE	BRD_ID = ? ");
 				
 				PreparedStatement pstmt = conn.prepareStatement(query.toString());
 				
@@ -225,7 +225,7 @@ public class BoardDaoImpl extends DaoSupport implements BoardDao{
 					query.append( " , BRD_CONT = ? " );
 					pstmt.setString(index++, board.getBoardContent());
 				}
-				if ( board.getBoardSubject() != null ) {
+				if ( board.getFileName() != null ) {
 					query.append( " , FILE_NM = ? " );
 					pstmt.setString(index++, board.getFileName());
 				}

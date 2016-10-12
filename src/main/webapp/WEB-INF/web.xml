@@ -67,7 +67,6 @@
   <servlet-mapping>
     <servlet-name>CheckDuplicateUserEmailServlet</servlet-name>
     <url-pattern>/CheckDuplicateUserEmailServlet</url-pattern>
-
     <url-pattern>/duplicateUserEmail</url-pattern>
   </servlet-mapping>
   <servlet>
@@ -161,36 +160,16 @@
   </servlet-mapping>
   <servlet>
     <description></description>
-    <display-name>ViewModifyServlet</display-name>
-    <servlet-name>ViewModifyServlet</servlet-name>
-    <servlet-class>net.ktds.drink.boards.web.ViewModifyServlet</servlet-class>
-  </servlet>
-  <servlet-mapping>
-    <servlet-name>ViewModifyServlet</servlet-name>
-    <url-pattern>/board/modify</url-pattern>
-  </servlet-mapping>
-  <servlet>
-    <description></description>
-    <display-name>DoModifyServlet</display-name>
-    <servlet-name>DoModifyServlet</servlet-name>
-    <servlet-class>net.ktds.drink.boards.web.DoModifyServlet</servlet-class>
-  </servlet>
-  <servlet-mapping>
-    <servlet-name>DoModifyServlet</servlet-name>
-    <url-pattern>/doModify</url-pattern>
-  </servlet-mapping>
-	<servlet>
-    <description></description>
     <display-name>DoThrowCubeServlet</display-name>
     <servlet-name>DoThrowCubeServlet</servlet-name>
     <servlet-class>net.ktds.drink.play.web.ajax.DoThrowCubeServlet</servlet-class>
-   </servlet>
+  </servlet>
   <servlet-mapping>
     <servlet-name>DoThrowCubeServlet</servlet-name>
     <url-pattern>/doThrowCube</url-pattern>
   </servlet-mapping>
-   <servlet>
-   <description></description>
+  <servlet>
+    <description></description>
     <display-name>ViewSignUpPageServlet</display-name>
     <servlet-name>ViewSignUpPageServlet</servlet-name>
     <servlet-class>net.ktds.drink.user.web.ViewSignUpPageServlet</servlet-class>
@@ -218,5 +197,25 @@
   <servlet-mapping>
     <servlet-name>DoSignInPageServlet</servlet-name>
     <url-pattern>/doSignIn</url-pattern>
+  </servlet-mapping>
+  <servlet>
+    <description></description>
+    <display-name>ViewModifyPageServlet</display-name>
+    <servlet-name>ViewModifyPageServlet</servlet-name>
+    <servlet-class>net.ktds.drink.boards.web.ViewModifyPageServlet</servlet-class>
+  </servlet>
+  <servlet-mapping>
+    <servlet-name>ViewModifyPageServlet</servlet-name>
+    <url-pattern>/board/modify</url-pattern>
+  </servlet-mapping>
+  <servlet>
+    <description></description>
+    <display-name>DoModifyServlet</display-name>
+    <servlet-name>DoModifyServlet</servlet-name>
+    <servlet-class>net.ktds.drink.boards.web.DoModifyServlet</servlet-class>
+  </servlet>
+  <servlet-mapping>
+    <servlet-name>DoModifyServlet</servlet-name>
+    <url-pattern>/doModify</url-pattern>
   </servlet-mapping>
 </web-app>
