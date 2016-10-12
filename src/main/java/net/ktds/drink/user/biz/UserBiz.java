@@ -1,4 +1,6 @@
 package net.ktds.drink.user.biz;
+import javax.servlet.http.HttpServletRequest;
+
 import net.ktds.drink.user.vo.UserVO;
 
 
@@ -17,5 +19,7 @@ public interface UserBiz {
 	public boolean isExsistUserNickname(String userNickname);
 
 	public boolean signUpUser(UserVO user);
+
+	public boolean signIn(UserVO user, HttpServletRequest request);
 
 }
