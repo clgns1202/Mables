@@ -346,6 +346,7 @@ public class BoardDaoImpl extends DaoSupport implements BoardDao{
 			}		
 		});
 	}
+
 	
 }
 

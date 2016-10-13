@@ -23,4 +23,5 @@ public interface BoardDao {
 	
 	public int updateRecommendCount(String boardId);
 	
+
 }
