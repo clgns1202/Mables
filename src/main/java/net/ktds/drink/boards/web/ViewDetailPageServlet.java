@@ -17,7 +17,7 @@ import net.ktds.drink.support.Param;
 import net.ktds.drink.user.vo.UserVO;
 
 /**
- * 세션필터, 포인트 업데이트(글 읽었을때 포인트?), 히트 카운트 업데이트(+1)
+ * �꽭�뀡�븘�꽣, �룷�씤�듃 �뾽�뜲�씠�듃(湲� �씫�뿀�쓣�븣 �룷�씤�듃?), �엳�듃 移댁슫�듃 �뾽�뜲�씠�듃(+1)
  * @author Eun-joo
  *
  */

@@ -87,5 +87,6 @@ public class BoardBizImpl implements BoardBiz{
 	public boolean removeBoard(String boardId) {
 		return boardDao.deleteBoard(boardId) > 0;
 	}
-	
+
+
 }
