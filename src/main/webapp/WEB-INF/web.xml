@@ -50,6 +50,7 @@
     <url-pattern>/searchType</url-pattern>
   </servlet-mapping>
   <servlet>
+  <description></description>
     <display-name>DoWriteServlet</display-name>
     <servlet-name>DoWriteServlet</servlet-name>
     <servlet-class>net.ktds.drink.boards.web.DoWriteServlet</servlet-class>
@@ -66,7 +67,6 @@
   </servlet>
   <servlet-mapping>
     <servlet-name>CheckDuplicateUserEmailServlet</servlet-name>
-    <url-pattern>/CheckDuplicateUserEmailServlet</url-pattern>
     <url-pattern>/duplicateUserEmail</url-pattern>
   </servlet-mapping>
   <servlet>
@@ -248,6 +248,7 @@
     <url-pattern>/board/*</url-pattern>
   </filter-mapping>
 <servlet>
+<description></description>
     <display-name>DoSetGamesServlet</display-name>
     <servlet-name>DoSetGamesServlet</servlet-name>
     <servlet-class>net.ktds.drink.games.web.DoSetGamesServlet</servlet-class>
