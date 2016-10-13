@@ -100,6 +100,10 @@ body {
     color: white;
 }
 
+.selected {
+	background-color: #80ff80;
+}
+
 div.sign-in {
 	top: 55px;
 }

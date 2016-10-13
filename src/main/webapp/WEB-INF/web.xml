@@ -31,7 +31,6 @@
   </servlet-mapping>
   <servlet>
     <description></description>
-
     <display-name>ViewSetGamesPageServlet</display-name>
     <servlet-name>ViewSetGamesPageServlet</servlet-name>
     <servlet-class>net.ktds.drink.games.web.ViewSetGamesPageServlet</servlet-class>
@@ -49,8 +48,8 @@
   <servlet-mapping>
     <servlet-name>SearchTypeServlet</servlet-name>
     <url-pattern>/searchType</url-pattern>
-</servlet-mapping>
-<servlet>
+  </servlet-mapping>
+  <servlet>
     <display-name>DoWriteServlet</display-name>
     <servlet-name>DoWriteServlet</servlet-name>
     <servlet-class>net.ktds.drink.boards.web.DoWriteServlet</servlet-class>
@@ -107,5 +106,15 @@
   <servlet-mapping>
     <servlet-name>ViewTestServlet</servlet-name>
     <url-pattern>/test</url-pattern>
+  </servlet-mapping>
+  <servlet>
+    <description></description>
+    <display-name>DoSetGamesServlet</display-name>
+    <servlet-name>DoSetGamesServlet</servlet-name>
+    <servlet-class>net.ktds.drink.games.web.DoSetGamesServlet</servlet-class>
+  </servlet>
+  <servlet-mapping>
+    <servlet-name>DoSetGamesServlet</servlet-name>
+    <url-pattern>/doSetGames</url-pattern>
   </servlet-mapping>
 </web-app>
