@@ -71,16 +71,6 @@
   </servlet-mapping>
   <servlet>
     <description></description>
-    <display-name>ViewListPageServlet</display-name>
-    <servlet-name>ViewListPageServlet</servlet-name>
-    <servlet-class>net.ktds.drink.boards.web.ViewListPageServlet</servlet-class>
-  </servlet>
-  <servlet-mapping>
-    <servlet-name>ViewListPageServlet</servlet-name>
-    <url-pattern>/board/list</url-pattern>
-  </servlet-mapping>
-  <servlet>
-    <description></description>
     <display-name>MyInfoServlet</display-name>
     <servlet-name>MyInfoServlet</servlet-name>
     <servlet-class>net.ktds.drink.play.web.ajax.MyInfoServlet</servlet-class>
@@ -229,7 +219,7 @@
     <url-pattern>/doModify</url-pattern>
   </servlet-mapping>
   <servlet>
-	<description></description>
+    <description></description>
     <display-name>DoLogoutPageServlet</display-name>
     <servlet-name>DoLogoutPageServlet</servlet-name>
     <servlet-class>net.ktds.drink.user.web.DoLogoutPageServlet</servlet-class>
@@ -247,8 +237,12 @@
     <filter-name>SessionCheckFilter</filter-name>
     <url-pattern>/board/*</url-pattern>
   </filter-mapping>
+<<<<<<< HEAD
 <servlet>
 <description></description>
+=======
+  <servlet>
+>>>>>>> 김명회
     <display-name>DoSetGamesServlet</display-name>
     <servlet-name>DoSetGamesServlet</servlet-name>
     <servlet-class>net.ktds.drink.games.web.DoSetGamesServlet</servlet-class>
@@ -256,5 +250,15 @@
   <servlet-mapping>
     <servlet-name>DoSetGamesServlet</servlet-name>
     <url-pattern>/doSetGames</url-pattern>
+  </servlet-mapping>
+  <servlet>
+    <description></description>
+    <display-name>ViewListPageServlet</display-name>
+    <servlet-name>ViewListPageServlet</servlet-name>
+    <servlet-class>net.ktds.drink.boards.web.ViewListPageServlet</servlet-class>
+  </servlet>
+  <servlet-mapping>
+    <servlet-name>ViewListPageServlet</servlet-name>
+    <url-pattern>/board/list</url-pattern>
   </servlet-mapping>
 </web-app>
