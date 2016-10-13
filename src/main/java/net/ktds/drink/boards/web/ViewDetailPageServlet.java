@@ -18,11 +18,7 @@ import net.ktds.drink.user.biz.UserBiz;
 import net.ktds.drink.user.biz.UserBizImpl;
 import net.ktds.drink.user.vo.UserVO;
 
-/**
- * 세션필터, 포인트 업데이트(글 읽었을때 포인트?)
- * @author Eun-joo
- *
- */
+
 public class ViewDetailPageServlet extends HttpServlet {
 	private static final long serialVersionUID = 1L;
        
