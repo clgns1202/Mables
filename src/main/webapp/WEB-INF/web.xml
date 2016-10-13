@@ -111,7 +111,6 @@
   </servlet-mapping>
   <servlet>
     <description></description>
-<<<<<<< HEAD
     <display-name>ViewDetailPageServlet</display-name>
     <servlet-name>ViewDetailPageServlet</servlet-name>
     <servlet-class>net.ktds.drink.boards.web.ViewDetailPageServlet</servlet-class>
@@ -248,7 +247,7 @@
     <filter-name>SessionCheckFilter</filter-name>
     <url-pattern>/board/*</url-pattern>
   </filter-mapping>
-=======
+<servlet>
     <display-name>DoSetGamesServlet</display-name>
     <servlet-name>DoSetGamesServlet</servlet-name>
     <servlet-class>net.ktds.drink.games.web.DoSetGamesServlet</servlet-class>
@@ -257,5 +256,4 @@
     <servlet-name>DoSetGamesServlet</servlet-name>
     <url-pattern>/doSetGames</url-pattern>
   </servlet-mapping>
->>>>>>> 윤유진_-_게임설정
 </web-app>
