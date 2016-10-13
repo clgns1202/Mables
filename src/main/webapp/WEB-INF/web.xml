@@ -67,7 +67,6 @@
   <servlet-mapping>
     <servlet-name>CheckDuplicateUserEmailServlet</servlet-name>
     <url-pattern>/CheckDuplicateUserEmailServlet</url-pattern>
-
     <url-pattern>/duplicateUserEmail</url-pattern>
   </servlet-mapping>
   <servlet>
@@ -179,18 +178,18 @@
     <servlet-name>DoModifyServlet</servlet-name>
     <url-pattern>/doModify</url-pattern>
   </servlet-mapping>
-	<servlet>
+  <servlet>
     <description></description>
     <display-name>DoThrowCubeServlet</display-name>
     <servlet-name>DoThrowCubeServlet</servlet-name>
     <servlet-class>net.ktds.drink.play.web.ajax.DoThrowCubeServlet</servlet-class>
-   </servlet>
+  </servlet>
   <servlet-mapping>
     <servlet-name>DoThrowCubeServlet</servlet-name>
     <url-pattern>/doThrowCube</url-pattern>
   </servlet-mapping>
-   <servlet>
-   <description></description>
+  <servlet>
+    <description></description>
     <display-name>ViewSignUpPageServlet</display-name>
     <servlet-name>ViewSignUpPageServlet</servlet-name>
     <servlet-class>net.ktds.drink.user.web.ViewSignUpPageServlet</servlet-class>
@@ -219,4 +218,23 @@
     <servlet-name>DoSignInPageServlet</servlet-name>
     <url-pattern>/doSignIn</url-pattern>
   </servlet-mapping>
+  <servlet>
+    <description></description>
+    <display-name>DoLogoutPageServlet</display-name>
+    <servlet-name>DoLogoutPageServlet</servlet-name>
+    <servlet-class>net.ktds.drink.user.web.DoLogoutPageServlet</servlet-class>
+  </servlet>
+  <servlet-mapping>
+    <servlet-name>DoLogoutPageServlet</servlet-name>
+    <url-pattern>/doLogout</url-pattern>
+  </servlet-mapping>
+  <filter>
+    <display-name>SessionCheckFilter</display-name>
+    <filter-name>SessionCheckFilter</filter-name>
+    <filter-class>net.ktds.drink.filter.SessionCheckFilter</filter-class>
+  </filter>
+  <filter-mapping>
+    <filter-name>SessionCheckFilter</filter-name>
+    <url-pattern>/board/*</url-pattern>
+  </filter-mapping>
 </web-app>
