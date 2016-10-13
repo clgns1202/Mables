@@ -24,21 +24,13 @@
 			
 		});
 		
-		$("#signUpBtn").click(function(){
-			$("#wrapper").load("/Mables/signUp", function(data){
-			});
+		
+		
+		$("#signUserEmail").blur(function(){
+			$("#signUserEmail").keyup();
 		});
 		
-		$("#cancleBtn").click(function(){
-			location.href="/Mables/play/index";
-		});
-		
-		
-		$("#userEmail").blur(function(){
-			$("#userEmail").keyup();
-		});
-		
-		$("#userEmail").keyup(function(){
+		$("#signUserEmail").keyup(function(){
 			if( $(this).val()=="" ){
 				$(this).addClass("warning");
 				$(this).removeClass("pass");
@@ -68,18 +60,45 @@
 	});
 	
 </script>
-		
+
+<style>
+
+#logInGroup{
+	border: 1px solid black;
+	height:80px;
+	width:330px;
+}
+#signUserEmail, #signUserPassword{
+	margin-top:0px;
+	height:28px;
+	width:200px;
+}
+#signInBtn{
+	float:right;
+	padding:4px;
+	margin-top:3px;
+	height:65px;
+	width:100px;
+}
+.container{
+	margin:0px;
+}
+
+.clear{
+	clear: right;
+}
+</style>
+
 		<div class="login">
 			<form id="signInForm" name="signInForm">
-				<div>
-					<div><input type="text" id="userEmail" name="userEmail" placeholder="Email 또는 ID를 적어주세요"> </div>
-					<div><input type="password" id="userPassword" name="userPassword" placeholder="Password를 적어주세요"/></div>
+				<div id="logInGroup">
+				<div class="inline">
+					<div><input type="text" id="signUserEmail" name="userEmail" placeholder="Email/ID"> </div>
+					<div><input type="password" id="signUserPassword" name="userPassword" placeholder="Password"/></div>
 				</div>
-				<div>
-					<div class="inline"><input type="button" id="signInBtn" value="Sign In"/></div>
-					<div class="inline"><input type="button" id="signUpBtn" value="Sign Up"/></div>
-					<div class="inline"><input type="button" id="cancleBtn" value="Cancle"/></div>
+					<div class="container inline"><input type="button" id="signInBtn" value="Sign In"/></div>
 				</div>
-			</form>
+				<div class="clear"></div>
+			</form >
 		</div>
 

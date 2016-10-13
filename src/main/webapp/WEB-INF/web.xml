@@ -160,6 +160,16 @@
   </servlet-mapping>
   <servlet>
     <description></description>
+    <display-name>ViewModifyServlet</display-name>
+    <servlet-name>ViewModifyServlet</servlet-name>
+    <servlet-class>net.ktds.drink.boards.web.ViewModifyServlet</servlet-class>
+  </servlet>
+  <servlet-mapping>
+    <servlet-name>ViewModifyServlet</servlet-name>
+    <url-pattern>/board/modify</url-pattern>
+  </servlet-mapping>
+  <servlet>
+    <description></description>
     <display-name>DoThrowCubeServlet</display-name>
     <servlet-name>DoThrowCubeServlet</servlet-name>
     <servlet-class>net.ktds.drink.play.web.ajax.DoThrowCubeServlet</servlet-class>
@@ -218,4 +228,23 @@
     <servlet-name>DoModifyServlet</servlet-name>
     <url-pattern>/doModify</url-pattern>
   </servlet-mapping>
+  <servlet>
+	<description></description>
+    <display-name>DoLogoutPageServlet</display-name>
+    <servlet-name>DoLogoutPageServlet</servlet-name>
+    <servlet-class>net.ktds.drink.user.web.DoLogoutPageServlet</servlet-class>
+  </servlet>
+  <servlet-mapping>
+    <servlet-name>DoLogoutPageServlet</servlet-name>
+    <url-pattern>/doLogout</url-pattern>
+  </servlet-mapping>
+  <filter>
+    <display-name>SessionCheckFilter</display-name>
+    <filter-name>SessionCheckFilter</filter-name>
+    <filter-class>net.ktds.drink.filter.SessionCheckFilter</filter-class>
+  </filter>
+  <filter-mapping>
+    <filter-name>SessionCheckFilter</filter-name>
+    <url-pattern>/board/*</url-pattern>
+  </filter-mapping>
 </web-app>
