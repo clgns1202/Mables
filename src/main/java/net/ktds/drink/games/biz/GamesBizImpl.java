@@ -23,11 +23,19 @@ public class GamesBizImpl implements GamesBiz {
 		return dao.getCategory(categoryVO);
 	}
 
+	
+	@Override
+	public List<GamesVO> allGetGames(GamesVO gamesVO) {
+		return dao.allGetGames(gamesVO);
+	}
 
 	@Override
 	public List<GamesVO> getGames(GamesVO gamesVO) {
 		return dao.getGames(gamesVO);
 	}
+
+
+
 
 
 

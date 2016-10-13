@@ -111,6 +111,7 @@
   </servlet-mapping>
   <servlet>
     <description></description>
+<<<<<<< HEAD
     <display-name>ViewDetailPageServlet</display-name>
     <servlet-name>ViewDetailPageServlet</servlet-name>
     <servlet-class>net.ktds.drink.boards.web.ViewDetailPageServlet</servlet-class>
@@ -157,6 +158,16 @@
   <servlet-mapping>
     <servlet-name>DoDeleteServlet</servlet-name>
     <url-pattern>/doDelete</url-pattern>
+  </servlet-mapping>
+  <servlet>
+    <description></description>
+    <display-name>ViewModifyServlet</display-name>
+    <servlet-name>ViewModifyServlet</servlet-name>
+    <servlet-class>net.ktds.drink.boards.web.ViewModifyServlet</servlet-class>
+  </servlet>
+  <servlet-mapping>
+    <servlet-name>ViewModifyServlet</servlet-name>
+    <url-pattern>/board/modify</url-pattern>
   </servlet-mapping>
   <servlet>
     <description></description>
@@ -218,4 +229,33 @@
     <servlet-name>DoModifyServlet</servlet-name>
     <url-pattern>/doModify</url-pattern>
   </servlet-mapping>
+  <servlet>
+	<description></description>
+    <display-name>DoLogoutPageServlet</display-name>
+    <servlet-name>DoLogoutPageServlet</servlet-name>
+    <servlet-class>net.ktds.drink.user.web.DoLogoutPageServlet</servlet-class>
+  </servlet>
+  <servlet-mapping>
+    <servlet-name>DoLogoutPageServlet</servlet-name>
+    <url-pattern>/doLogout</url-pattern>
+  </servlet-mapping>
+  <filter>
+    <display-name>SessionCheckFilter</display-name>
+    <filter-name>SessionCheckFilter</filter-name>
+    <filter-class>net.ktds.drink.filter.SessionCheckFilter</filter-class>
+  </filter>
+  <filter-mapping>
+    <filter-name>SessionCheckFilter</filter-name>
+    <url-pattern>/board/*</url-pattern>
+  </filter-mapping>
+=======
+    <display-name>DoSetGamesServlet</display-name>
+    <servlet-name>DoSetGamesServlet</servlet-name>
+    <servlet-class>net.ktds.drink.games.web.DoSetGamesServlet</servlet-class>
+  </servlet>
+  <servlet-mapping>
+    <servlet-name>DoSetGamesServlet</servlet-name>
+    <url-pattern>/doSetGames</url-pattern>
+  </servlet-mapping>
+>>>>>>> 윤유진_-_게임설정
 </web-app>

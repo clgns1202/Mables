@@ -111,9 +111,19 @@ body {
     color: white;
 }
 
+<<<<<<< HEAD
 .sign-in{
-	background-color: #555;
-	top: 60px;
+	border:1px solid black;
+	background-color: #ccc;
+	
+=======
+.selected {
+	background-color: #80ff80;
+}
+
+div.sign-in {
+>>>>>>> 윤유진_-_게임설정
+	top: 55px;
 	right:0;
 	position: fixed;
 	z-index: 89;
